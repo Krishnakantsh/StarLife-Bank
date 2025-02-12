@@ -1,0 +1,571 @@
+@media(max-width:1024px){
+  .openYourAc{
+    flex-direction: row;
+    display: flex;
+    margin-top: 2vw;
+  }
+
+  .openYourAc h1{
+    font-size: 6vw;
+
+  }
+  .openYourAc h2{
+    font-size: 6vw;
+    margin-left: 2vw;
+  }
+
+}
+
+
+@media(max-width:768px){
+     
+  .TaglineDIV{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top:20%;
+    left:30%;
+  }
+
+  .loginCard{
+    height: 50vw;
+    width: 40vw;
+    top: 40%;
+    left: 30vw;
+    z-index: 20;
+  }
+  .loginCard h1{
+    font-size: 5vw;
+    font-weight: 700;
+    margin-top: 1vw;
+  }
+  .loginCard input{
+    margin-top: 4vw;
+    font-size: 2.5vw;
+    height:5vw;
+    padding-left: 0.5vw;
+  }
+  .loginCard p{
+    margin-top: 1vw;
+    font-size: 2.5vw;
+  }
+
+  .loginCard button{
+
+    height: 5vw;
+    margin-bottom: 0.5vw;
+    font-size: 2.5vw;
+    font-weight: 600;
+    border: 0.2vw solid white;
+  }
+  
+  
+.mesContaLeft{
+	height:50vw;
+}
+
+.messageDiv{
+	height:40vw;
+	width:90%;
+}
+
+.messageDiv h1,.messageDiv h3{
+	margin-top:2.5vw;
+	font-size:2.5vw;
+}
+
+.messageDiv h4{
+	padding:1vw 1.5vw;
+	margin-top:2vw;
+	font-size:2.2vw;
+}
+
+#NoteAlert{
+	font-size:1.2vw;
+}
+
+
+}
+
+
+
+@media(max-width:575px){
+  .footerDiv1,.footerDiv2{
+    width: 50%;
+    padding-left: 12vw;
+  }
+  .footerDiv1 h1,.footerDiv2 h1{
+    color:#FABC3F;
+    font-size: 3.5vw;
+    margin-left: 1vw;
+  }
+  .footerDiv1 ul , .footerDiv2 ul{
+    line-height: 3.5vw;
+    font-size: 1.8vw;
+  }
+  .footerDiv3 h1{
+    font-size: 6vw;
+ }
+ .footerDiv3 input{
+   width: 80%;
+   height: 10vw;
+   padding-left: 2vw;
+   margin-top: 0.5vw;
+   border-radius: 10vw;
+   border: none;
+ }
+
+ .connectWithUs h1{
+   font-size: 8vw;
+   color: #CD5C08;
+ }
+ 
+ .connectWithUs ul li img{
+   width: 5vw;
+   height: 5vw;
+
+ }
+
+ 
+.serviceLeft{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1vw;
+  height: fit-content;
+  border-bottom-right-radius: 0px;
+  padding: 1vw;
+}
+
+.service1Right{
+  display: none;
+}
+.digitalBan h1{
+  font-size: 12vw;
+  margin-left: 1vw;
+}
+
+.digitalBan span{
+  font-size: 12vw;
+  margin-left: 2vw;
+}
+
+
+.DigiBanki_out{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2vw;
+  width: 80%;
+  padding-bottom: 5vw;
+}
+
+.DigiBanki_in{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2vw;
+}
+
+.DigiBankiItems{
+  width: 30vw;
+  height: 6vw;
+  padding-left: 2vw;
+  font-size: 3vw;
+  margin-top: 8vw;
+}
+
+.iButtonDiv{
+  width: 5vw;
+  height: 5vw;
+}
+
+.iButtonDiv i {
+  font-size: 3vw;
+}
+.featureCard{
+  width: 25vw;
+  height: 30vw;
+  margin:0.2vw;
+  margin-left: 5vw;
+
+}
+
+.featureCardImgDiv{
+  height: 20vw;
+  width: 20vw;
+  margin-bottom: 5vw
+}
+
+.featureCard button{
+  width:100%;
+  height: 5vw;
+  font-size: 2vw;
+}
+
+  
+.messageContainer{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+}
+
+.mesContaLeft{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:80vw;
+}
+
+.mesContaLeft img{
+	width:36.5vw;
+	height:53vw;
+	object-fit:cover;
+	position:center;
+}
+.mesContaERight{
+	display:flex;
+	justify-content:center;
+	align-items:start;
+	height:90vw;
+	padding-top:5vw;
+}
+
+.messageDiv{
+	height:80vw;
+	width:100%;
+	position:relative;
+	padding-bottom:10vw;
+}
+
+.HeadingDiv{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+
+.HeadingDiv p{
+	font-size:6vw;
+	font-family:700;
+}
+.messageDiv h1,.messageDiv h3{
+	margin-top:4vw;
+	font-size:6vw;
+}
+
+
+.messageDiv h4{
+	padding:1vw 3vw;
+	margin-top:3vw;
+	font-size:3.5vw;
+	box-shadow:0vw 0.3vw 0.5vw black;
+	border-radius:30px;
+}
+
+#NoteAlert{
+	margin-top:2vw;
+	color:black;
+	font-size:3vw;
+}
+
+
+
+}
+
+/* max width 400px ............................................................................................... */
+
+
+@media(max-width:400px){
+
+  .header{
+    height: 15vw;
+  }
+  .logoDiv{
+    font-size: 5vw;
+    padding:1vw  4vw;
+  }
+  .spinnerDiv{
+    display: block;
+  }
+
+  .TaglineDIV{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top:10%;
+    left:20%;
+  }
+  .TaglineDIV h1{
+    font-size: 7vw;
+  }
+  .TaglineDIV button{
+    font-size: 4vw;
+  }  
+  .TaglineDIV h2{
+    font-size: 4vw;
+  }
+  .screenSlider{
+    height:86vh;
+  }
+
+  .col1right{
+    display: none;
+  }
+  .navList{
+     display: none;
+  }
+  .dotDivContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.4vw;
+    border: 0.1vw solid rgb(255, 111, 0);
+    box-shadow:inset 2px 2px 5px rgb(255, 111, 0);
+    height: fit-content;
+  }
+  
+  .dotContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:50vw;
+    height: 10vw;
+  }
+  .active{
+    background-color:rgb(255, 111, 0);
+  }
+  
+  .dotDiv{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    border: 0.1vw solid rgb(255, 111, 0);
+    box-shadow:inset 2px 2px 5px rgb(255, 111, 0);
+  }
+
+  .servicesRo1{
+    display: flex;
+    flex-direction: column;
+  }
+  .digitalBan h1{
+    font-size: 12vw;
+    margin-left: 1vw;
+    margin-top: 1vw;
+  }
+
+  .digitalBan span{
+    font-size: 12vw;
+    margin-left: 2vw  ; 
+  }
+
+
+.DigiBanki_in{
+   width: 60vw;
+}
+
+.DigiBankiItems{
+  width: 60vw;
+  height: 10vw;
+  padding-left: 1vw;
+  font-size: 5vw;
+}
+
+.iButtonDiv{
+  width: 10vw;
+  height: 10vw;
+}
+.iButtonDiv i {
+  font-size: 5vw;
+  color: #E8B86D;
+}
+
+.openYourAc h1,.openYourAc h2{
+  font-size: 8vw;
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+.loginCard{
+    height: 80vw;
+    width: 60vw;
+    top: 40%;
+    left:20vw;
+    z-index: 4;
+  }
+  .loginCard h1{
+    font-size: 8vw;
+  }
+  .loginCard input{
+    margin-top: 4vw;
+    font-size: 3vw;
+    padding-left: 1vw;
+    height:6vw;
+    margin-top:1.5vw;
+  }
+
+  .loginCard p{
+    font-size: 6vw;
+    font-weight: 500;
+  }
+  .loginCard button{
+    height: 6vw;
+    margin-bottom: 1vw;
+    font-size: 3vw;
+  }
+
+  .sliderOut{
+    width: 70%;
+  }
+
+  
+  .featureCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:fit-content;
+    width: 54vw;
+  }
+
+  .featureCardImgDiv{
+    height: 50vw;
+    width: 50vw;
+    border:1vw solid #B3C8CF;
+    margin-bottom: 10vw;
+  }
+
+  .featureCard button{
+    height: 9vw;
+    font-size: 5vw;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 1vw;
+  }
+
+
+  .slideIconDiv{
+    padding: 3vw;
+  }
+
+
+  .leftSlider, .rightSlider{
+    width: 10vw;
+    height: 10vw;
+    font-size: 5vw;
+  
+  }
+
+  .SecurityMainDiv{
+    height:50vw;
+    padding:6vw;
+  }
+  .securityWarn{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .securityWarn h1{
+     font-size: 5vw;
+     color: #6482AD;
+     text-shadow: 0.08vw 0.1vw 0.5vw #6482AD;
+     padding-left: 2vw;
+  }
+  
+  .CyberBtn{
+    background: #CD5C08;
+    width: 20vw;
+    height: 3vw;
+    margin-top: 3vw;
+    border: none;
+    border-radius: 10vw;
+    margin-left: 20vw;
+    font-size: 2vw;
+    font-family: verdana;
+    font-weight:600;
+    color: white;
+  }
+  
+  
+.messageContainer{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+}
+
+.mesContaLeft{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	height:70vw;
+}
+
+.mesContaLeft img{
+	width:36.5vw;
+	height:53vw;
+	object-fit:cover;
+	position:center;
+}
+.mesContaERight{
+	display:flex;
+	justify-content:center;
+	align-items:start;
+	height:90vw;
+	padding-top:5vw;
+}
+
+.messageDiv{
+	height:80vw;
+	width:100%;
+	position:relative;
+}
+
+.HeadingDiv{
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+
+.HeadingDiv p{
+	font-size:6vw;
+	font-family:700;
+}
+.messageDiv h1,.messageDiv h3{
+	margin-top:4vw;
+	font-size:6vw;
+}
+
+
+.messageDiv h4{
+	padding:1vw 3vw;
+	margin-top:3vw;
+	font-size:3.5vw;
+	box-shadow:0vw 0.3vw 0.5vw black;
+	border-radius:30px;
+}
+
+#NoteAlert{
+	margin-top:2vw;
+	color:black;
+	font-size:3vw;
+}
+
+
+.openAccDiv{
+	justify-content:center;
+	padding:2.5vw;	
+}
+
+
+.openAccountPageLink a{
+	font-size:5vw;
+}
+
+  
+
+};
+  
+
+

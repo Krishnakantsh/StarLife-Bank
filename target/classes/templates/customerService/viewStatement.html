@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+       th:replace="customerService/CustomerDashborad::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title th:text="${title}"></title>
+</head>
+<body>
+     <section>
+         <div class="container-fluid viewstatementmain">
+             
+             <div class="statementformdiv">
+             <form action="" th:action="@{'/viewState/'+{id}}" class="viewstatementfo">
+                  <div class="startDateDiv">
+                    <h1>From : </h1>
+                    <input type="date" name="startingdate" id="startingdate" class="form-control" placeholder="From"> 
+                  </div>
+                  <div class="startDateDiv">
+                    <h1>UPTO : </h1>
+                      <input type="date" name="startingdate" id="startingdate" class="form-control" placeholder="From"> 
+                  </div>
+                  <div class="startDateDiv">
+                      <button class="btn btn-primary" type="submit">TODAY</button>
+                      <button class="btn btn-dark"   type="submit">THIS WEEK</button>
+                      <button class="btn btn-success"   type="submit">THIS MONTH</button>
+                      <button class="btn btn-success"   type="submit">SIX MONTHS</button>
+                  </div>
+                  <div class="startDateDiv">
+                    
+                  </div>                              
+            </form>
+        </div> 
+        <hr>
+        <div class="statementHeader">
+            <div class="serialDiv"><p> <strong>Serial No.</strong></p></div>
+            <div class="serialDiv"><p><strong>Date & Time</strong></p></div>
+            <div class="serialDiv"><p><strong>Transaction Amount</strong></p></div>
+            <div class="serialDiv"><p><strong>Current Balance</strong></p></div>
+            <div class="serialDiv"><p><strong>Status</strong></p></div>
+        </div>
+        <div class="statementHeader">
+            <div class="serialDiv"><p>1.</p></div>
+            <div class="serialDiv"><p>09/11/2024</p></div>
+            <div class="serialDiv"><p>5000.00</p></div>
+            <div class="serialDiv"><p>5000.00</p></div>
+            <div class="serialDiv"><p>Credit</p></div>
+        </div>
+        </div>
+
+    </section>	
+</body>
+</html>
