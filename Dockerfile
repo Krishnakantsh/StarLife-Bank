@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY pom.xml mvnw .mvn/ ./
 
-RUN chmod +x ./mvnw 
+RUN chmod +x mvnw
 
 COPY . .
 
