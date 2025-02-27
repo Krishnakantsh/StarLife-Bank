@@ -31,9 +31,9 @@
 		<java.version>21</java.version>
 	</properties> -->
 	<properties>
-    <maven.compiler.source>21.0.2</maven.compiler.source>
-    <maven.compiler.target>21.0.2</maven.compiler.target>
-		<maven.compiler.release>21.0.2</maven.compiler.release>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.release>21</maven.compiler.release>
   </properties>
 
 	<dependencies>
@@ -118,11 +118,11 @@
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.8.1</version> <!-- Ensure a compatible version -->
+            <version>3.11.0</version>
             <configuration>
-                <source>21.0.2</source>
-                <target>21.0.2</target>
-                <release>21.0.2</release>
+                <source>21</source>
+                <target>21</target>
+                <release>21</release>
             </configuration>
         </plugin>
     </plugins>

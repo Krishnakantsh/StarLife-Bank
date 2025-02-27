@@ -1,14 +1,15 @@
-FROM openjdk:21-jdk
+FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
+COPY pom.xml mvnw .mvn/ ./
+
+RUN chmod +x ./mvnw 
+
 COPY . .
 
-RUN chmod +x ./mvnw
-
-RUN ./mvnw clean package -DskipTests -Dmaven.repo.local=/app/.m2/repository
-
+RUN ./mvnw clean package -DskipTests 
 
 EXPOSE 9191
 
-CMD ["java", "-jar", "target/starLife-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT  ["java", "-jar", "target/starLife-0.0.1-SNAPSHOT.jar"]
