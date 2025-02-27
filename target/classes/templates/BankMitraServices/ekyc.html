@@ -33,7 +33,8 @@
             <button class="btn btn-danger" type="reset">Reset</button>
            </div>
         </form>
-       <form action=""  th:action="@{/bank_mitra/doKyc/process}"  method="post"   th:if="${session.otpSendDone}"  >
+      <!--  th:if="${session.otpSendDone}"  -->
+       <form action=""  th:action="@{/bank_mitra/doKyc/process}"  method="post"  th:if="${session.otpSendDone}"  >
           <div class="adhar_number_inputs_otp">
            <input type="text" class="form-control" placeholder="0" maxlength="1"  required  name="otp1" >
            <input type="text" class="form-control" placeholder="0" maxlength="1" required   name="otp2"  >

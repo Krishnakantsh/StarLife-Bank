@@ -3,9 +3,8 @@
   height: fit-content;
   align-items: start;
   justify-content: start;
-  margin-top: 6vw;
+  margin-top: 7vw;
   padding: 2vw;
-  border: 2px solid green;
   min-height: calc(100vh - 6vw);
   background: red;
   display:flex;

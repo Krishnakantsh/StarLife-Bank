@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org"
                  th:fragment="Layout(content2)" >
@@ -15,25 +12,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="#" th:href="@{/css/BankMitraCss/HomePage.css}">
-    <link rel="stylesheet" href="#" th:href="@{/css/navbar.css}" />
+    <link rel="stylesheet"  th:href="@{/css/BankMitraCss/BankMitraNavbar.css}" />
+    <link rel="stylesheet"  th:href="@{/css/BankMitraCss/HomePage.css}">
     <link rel="stylesheet" th:href="@{/css/BankMitraCss/Dashboard.css}">
     <link rel="stylesheet" th:href="@{/css/BankMitraCss/openNewAccount.css}">
     <link rel="stylesheet" th:href="@{/css/BankMitraCss/ekyc.css}">
     <link rel="stylesheet" th:href="@{/css/BankMitraCss/customer_services.css}">
     <link rel="stylesheet" th:href="@{/css/BankMitraCss/moneyTransfer.css}">
     <link rel="stylesheet" th:href="@{/css/BankMitraCss/BankMitraUpdateDetails.css}">
+    <link rel="stylesheet" th:href="@{/css/BankMitraCss/BankMitraMediaQuery.css}">
 
 	<title th:text="${title}"></title>
 </head>
 <body>
-  <div class="colorPalateHeader">
-    <div class="navColorDivContainer">
-        
-    </div>
- </div>
-	    <div class="header"  >
-        <a href="#" th:href="@{/home}"><div class="logoDiv">Star Life Bank</div></a>
+    
+  <div class="BankMitraConatiner">
+
+ 
+	    <div class="BankMitraheader"  >
+        <a href="#" th:href="@{/home}"><div class="BankMitraheaderlogoDiv">Star Life Bank</div></a>
         <div class="navList">
           <ul>
             <li class="list-item highlighted"><a href="#" th:href="@{/home}">HOME</a></li>
@@ -50,77 +47,82 @@
             </li>
           </ul>
         </div>
-        <!-- <div class="spinnerDiv"><i class="fa-solid fa-bars"></i></div> -->
+        <div class="BankMitraspinnerDiv"><i class="fa-solid fa-bars"></i></div>
       </div>
      
-      <div class="profileSignDiv">
-         <div class="profileImgSignInDiv">
+       <!-- <div class="BankMitraprofileSignDiv">
+         <div class="BankMitraprofileImgSignInDiv">
             <img src="" alt="" />
          </div>
-         <div class="details d-flex justify-content-center flex-column  w-100 align-items-center">
+         <div class="BankMitradetails d-flex justify-content-center flex-column  w-100 align-items-center">
                  <h4>Customer name</h4>
                  <button type="submit" class="btn btn-light" >Update Profile</button>
           </div>
          <hr>
          <button type="submit" class="btn btn-light" >SignIn</button>
          <button type="submit" class="btn btn-light" >Logout</button>
-      </div>
-
-        <div class="bankMitra_main">
-             <div class="bank_mitra_sidebar">
-                   <div class="bank_mitra_profile_div">
-                        <div class="profile_img_div">
-                            <img th:src="@{'/image/'+${session.bankmitra.bimage}}" alt="bank_mitra_img">
-                            
-                              <div class="imageUpdateDiv  "  onclick="window.location.href='/bank_mitra/updateImageHandler'"  >
-                                <ion-icon name="brush-outline"></ion-icon>
-                              </div>
-                      
-                        </div>
-                        <h1>[[${session.bankmitra.fullname}]]</h1>
-                        <div class="bank_mitra_btn_div">
-                        <a th:href="@{/bank_mitra/bankmitraUpdate}">
-                         <div  class="btn b_mitra_update_btn"  >Update Details</div>
-                        </a>
-                        <a th:href="@{/logout}">
-                         <div class="btn b_mitra_logout_btn "  >Log Out</div>
-                        </a>
-                  
-                        </div>
+       </div>
+       -->
+       
+       
+       <div class="bank_mitra_sidebar">
+        <div class="bank_mitra_profile_div">
+             <div class="profile_img_div">
+                 <img th:src="@{'/image/'+${session.bankmitra.bimage}}" alt="bank_mitra_img">
+                 
+                   <div class="imageUpdateDiv  "  onclick="window.location.href='/bank_mitra/updateImageHandler'"  >
+                     <ion-icon name="brush-outline"></ion-icon>
                    </div>
-                   <div class="bank_mitra_list">
-                      <a th:href="@{/bank_mitra/dashboard}">
-                       <ion-icon name="bar-chart-outline"></ion-icon>
-                       <div class="bank_mitra_list_item">Dashboard</div>
-                      </a>
-                      <a th:href="@{/bank_mitra/accountOpen}">
-                       <ion-icon name="person-add-outline"></ion-icon>
-                       <div class="bank_mitra_list_item">Open Account</div>
-                      </a>
-                      <a th:href="@{/bank_mitra/ekyc}">
-                       <ion-icon name="create-outline"></ion-icon>
-                       <div class="bank_mitra_list_item">E-Kyc</div>
-                      </a>
-                      <a th:href="@{/bank_mitra/cutomer_service}">
-                        <ion-icon name="people-outline"></ion-icon>
-                       <div class="bank_mitra_list_item">Customer Services</div>
-                      </a>
-                      <a th:href="@{/bank_mitra/depositMoney}">
-                        <ion-icon name="log-in-outline"></ion-icon>
-                       <div class="bank_mitra_list_item">Deposit Money</div>
-                      </a>
-                      <a th:href="@{/bank_mitra/withdrawl}">
-                        <ion-icon name="log-out-outline"></ion-icon>
-                       <div class="bank_mitra_list_item">Withdrawl Money</div>
-                      </a>
-                      <a th:href="@{/bank_mitra/moneyTransfer}">
-                        <ion-icon name="swap-horizontal-outline"></ion-icon>
-                       <div class="bank_mitra_list_item">Money Transfer</div>
-                      </a>
-                  
-                   </div>
- 
+           
              </div>
+             <h1>[[${session.bankmitra.fullname}]]</h1>
+             <div class="bank_mitra_btn_div">
+             <a th:href="@{/bank_mitra/bankmitraUpdate}">
+              <div  class="btn b_mitra_update_btn"  >Update Details</div>
+             </a>
+             <a th:href="@{/logout}">
+              <div class="btn b_mitra_logout_btn "  >Log Out</div>
+             </a>
+       
+             </div>
+        </div>
+        <div class="bank_mitra_list">
+           <a th:href="@{/bank_mitra/dashboard}">
+            <ion-icon name="bar-chart-outline"></ion-icon>
+            <div class="bank_mitra_list_item">Dashboard</div>
+           </a>
+           <a th:href="@{/bank_mitra/accountOpen}">
+            <ion-icon name="person-add-outline"></ion-icon>
+            <div class="bank_mitra_list_item">Open Account</div>
+           </a>
+           <a th:href="@{/bank_mitra/ekyc}">
+            <ion-icon name="create-outline"></ion-icon>
+            <div class="bank_mitra_list_item">E-Kyc</div>
+           </a>
+           <a th:href="@{/bank_mitra/cutomer_service}">
+             <ion-icon name="people-outline"></ion-icon>
+            <div class="bank_mitra_list_item">Customer Services</div>
+           </a>
+           <a th:href="@{/bank_mitra/depositMoney}">
+             <ion-icon name="log-in-outline"></ion-icon>
+            <div class="bank_mitra_list_item">Deposit Money</div>
+           </a>
+           <a th:href="@{/bank_mitra/withdrawl}">
+             <ion-icon name="log-out-outline"></ion-icon>
+            <div class="bank_mitra_list_item">Withdrawl Money</div>
+           </a>
+           <a th:href="@{/bank_mitra/moneyTransfer}">
+             <ion-icon name="swap-horizontal-outline"></ion-icon>
+            <div class="bank_mitra_list_item">Money Transfer</div>
+           </a>
+       
+        </div>
+
+       </div>
+
+
+      <div class="bankMitra_main">
+        
              <div class="bank_mitra_details_body" >
                    <div th:replace="${content2}"></div>
                         
@@ -129,12 +131,13 @@
  
 
 	   
+	 </div>
 	
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script th:src="@{/js/BankMitraScript.js}"></script>
 
 </body>
 </html>

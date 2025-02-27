@@ -19,7 +19,7 @@ section{
 }
 
 .insight_card{
-  height:15rem;
+  height:12rem;
   box-shadow: 0 7px  15px rgba(0,0,0,0.3);
   border-radius: 10px;
   display: flex;
@@ -33,7 +33,7 @@ section{
 
 .insight_card h1{
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .insight_card_details{
@@ -45,7 +45,7 @@ section{
 }
 
 .insight_card_details h3{
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: rgb(0,0,0);
   font-weight: 500;
 }
@@ -53,7 +53,6 @@ section{
 .insight_card_details a{
   width: fit-content;
   height: fit-content;
-
 }
 
 .insight_card_details a:hover{
@@ -86,11 +85,8 @@ section{
 }
 
 .insight_card:hover{
-  /* background: rgb(23,141,241); */
   box-shadow: 0 7px  15px rgba(23,141,241,0.3);
 }
-
-
 
 .recent_customer_main{
   display: flex;
@@ -100,7 +96,6 @@ section{
   min-height: 58vh;
   height: fit-content;
   align-items: center;
-  margin-top:0.5vw;
   margin-top: 1vw;
   box-shadow: 0 7px  15px rgba(0,0,0,0.3);
   background: rgb(255,255,255);
@@ -109,16 +104,16 @@ section{
   margin-bottom: 0;
 }
 
-
-.heading_div{
+.recent_customer_main .heading_div{
   width: 100%;
   height: fit-content;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   overflow: hidden;
   padding: 0.5vw 1vw;
-  color: rgb(23,141,241);
+  color: rgb(246, 247, 248);
+  font-size: 2.2vw;
 }
 
 .customer_list_div{
@@ -145,7 +140,7 @@ section{
 .list_item_div_header table{
   width: 100%;
   border-collapse: separate;
-    border-spacing: 0 20px;
+  border-spacing: 0 20px;
 
 }
 

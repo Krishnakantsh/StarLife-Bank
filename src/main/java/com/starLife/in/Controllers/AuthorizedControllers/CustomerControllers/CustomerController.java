@@ -41,7 +41,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @Controller
-@RequestMapping("/customer/customerDashboard")
+@RequestMapping("/customer")
 public class CustomerController {
 	
 	@Autowired
@@ -60,7 +60,7 @@ public class CustomerController {
 	private OtpService otpService;
 		
     
-@GetMapping("/homepage")
+@GetMapping("/customerDashboard/homepage")
      public String openCustomerDashboard(Model m, Principal p, HttpSession session) {
     	 
   	  String username = p.getName();
@@ -76,7 +76,7 @@ public class CustomerController {
     	 return "customerService/customerHomepage";
      }
 
-@GetMapping("/checkbalance")
+@GetMapping("/customerDashboard/checkbalance")
      public String CHECKBALANCE(Model m, Principal p, HttpSession session) {
     	 
   	  String username = p.getName();
@@ -102,7 +102,7 @@ public class CustomerController {
 // profile update ................ 
 
 
-@GetMapping("/updateProfile")
+@GetMapping("/customerDashboard/updateProfile")
      public String updateProfile(Model m, Principal p) {
     	 
   	  String username = p.getName();
@@ -120,7 +120,7 @@ public class CustomerController {
 // profile update ................ 
 
 
-@GetMapping("/money_transfer")
+@GetMapping("/customerDashboard/money_transfer")
 		public String moneyTransfer(Model m, Principal p) {
 			
 		 String username = p.getName();
@@ -136,8 +136,8 @@ public class CustomerController {
 
 //  money transfer process 
 
-@GetMapping("/moneyTransfer")
-public String getMethodName(@ModelAttribute MoneyTransferHelper recipant , Model m , Principal p) {
+@GetMapping("/customerDashboard/moneyTransfer")
+public String getMethodName(@ModelAttribute MoneyTransferHelper recipant , Model m , HttpSession session, Principal p) {
 
 String accountNo = recipant.getRecipientAcc();
 String recipient_name = recipant.getRecipientName();
@@ -207,7 +207,8 @@ Transaction_History trans2 = new Transaction_History();
 					 this.cstmrRepo.save(currentRecipient);
 
 
-					 m.addAttribute("title", " Money Transfer ");
+					 Message message = new Message("alert-success" , "Fund transfered !!!");
+           session.setAttribute("moneyTranfer",message);
 					 m.addAttribute("customer", customer);
 
 					 return "customerService/moneytranfer";
@@ -223,8 +224,8 @@ Transaction_History trans2 = new Transaction_History();
 					trans1.setTrans_id("txn_slb_"+transactionNum); 
 	
 					this.transactionRepo.save(trans1);
-					 m.addAttribute("title", " Money Transfer ");
-
+					Message message = new Message("alert-danger" , "You entered wrong atm pin ...");
+					session.setAttribute("moneyTranfer",message);
 					 m.addAttribute("customer", customer);
 					 return "customerService/moneytranfer";
 				 }
@@ -253,7 +254,7 @@ Transaction_History trans2 = new Transaction_History();
 
 // atm pin update................ 
 
-@GetMapping("/atm_pin_update")
+@GetMapping("/customerDashboard/atm_pin_update")
 				public String atmpinUpdate(Model m, Principal p) {
 					
 				 String username = p.getName();
@@ -269,7 +270,7 @@ Transaction_History trans2 = new Transaction_History();
 // debit card process.......................................
 
 
-@GetMapping("/debit_card")
+@GetMapping("/customerDashboard/debit_card")
 				public String debitcard(Model m, Principal p,HttpSession session) {
 					
 				 String username = p.getName();
@@ -310,7 +311,7 @@ Transaction_History trans2 = new Transaction_History();
 // view statement ....................................
 
 
-@GetMapping("/viewStatement")
+@GetMapping("/customerDashboard/viewStatement")
 					public String statementpage(Model m, Principal p) {
 						
 					 String username = p.getName();
@@ -328,7 +329,7 @@ Transaction_History trans2 = new Transaction_History();
 // process check balance
 
 
-@PostMapping("/checkBalanceProcess")
+@PostMapping("/customerDashboard/checkBalanceProcess")
 public String processBalance(@ModelAttribute Customer custo, Model m,Principal p,HttpSession session){
 	  
 
@@ -371,7 +372,7 @@ public String processBalance(@ModelAttribute Customer custo, Model m,Principal p
 
 // UPDATE DETAILS PROCESS ......................................
 
-@PostMapping("/updatedetails")
+@PostMapping("/customerDashboard/updatedetails")
 	public String createAcc(@ModelAttribute Customer customer ,Model m,HttpSession session , Principal p,@RequestParam("filename") MultipartFile file) throws IOException {
 	
     	 
@@ -424,7 +425,7 @@ public String processBalance(@ModelAttribute Customer custo, Model m,Principal p
 
  // genareate debit card .....................
 
-@PostMapping("/generateDebitcard")
+@PostMapping("/customerDashboard/generateDebitcard")
 		public String generationDebit(Principal p, Model m, HttpSession session) throws OtpException{
       
      String username = p.getName();
@@ -465,21 +466,21 @@ public String processBalance(@ModelAttribute Customer custo, Model m,Principal p
 				
 				session.setAttribute("notAtm", "yes");
 
-		    return "redirect:/customerDashboard/debit_card";
+		    return "redirect:/customer/customerDashboard/debit_card";
 
 			}
       
 			session.setAttribute("yesAtm", "yes");
 			session.setAttribute("messageatmNot", "ATM generated successfully");
 
-			return "redirect:/customerDashboard/debit_card";
+			return "redirect:/customer/customerDashboard/debit_card";
 		}
 
 
 
 // UPDATE ATM PIN HANDLER ....sent otp ....................................
 
-@GetMapping("/atmpinchangeGetOTP")
+@GetMapping("/customerDashboard/atmpinchangeGetOTP")
 public String putMethodName( Principal p, Model m, HttpSession session, @ModelAttribute Customer cust) throws OtpException {
    
 	String username = p.getName();
@@ -524,7 +525,7 @@ public String putMethodName( Principal p, Model m, HttpSession session, @ModelAt
 
 // atm pin updatation pin verify handler .................................
 
-@PostMapping("/UpdateAtnPinOtpVerify")
+@PostMapping("/customerDashboard/UpdateAtnPinOtpVerify")
 public String verifyAtmOtp(Principal p, Model m, HttpSession session, @ModelAttribute Customer cust ,@ModelAttribute  SigninHelper signinHelper){
 
 
@@ -563,7 +564,7 @@ public String verifyAtmOtp(Principal p, Model m, HttpSession session, @ModelAttr
 
 // update pin handler goes here .....................
 
-@PostMapping("/updateAtmPin")
+@PostMapping("/customerDashboard/updateAtmPin")
 public String UpdateAtmPin(Principal p, Model m, HttpSession session, @ModelAttribute Customer cust ,@ModelAttribute  AtmPinHelper atmPinHelper){
    
 	String username = p.getName();

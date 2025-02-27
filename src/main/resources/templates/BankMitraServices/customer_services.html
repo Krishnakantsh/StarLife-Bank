@@ -33,16 +33,16 @@
              </div>
 
 
-            <div class="service_content_div  "     >
+            <div class="service_content_div  "  >
                 <form action=""   th:action="@{/bank_mitra/pan_card_link_otp}"  method="post" th:if="${session.open_pan}"   >
-                 <label for="pancard_no">Enter Pan Card Number : </label>
+                 <label for="pancard_no">Enter Pan Card Number  </label>
                  <input type="text" class="form-control" placeholder="OQYPS4589T" name="panCard"  id="pancard_no">
-                 <label for="adhar_no">Enter Aadhar Number : </label>
+                 <label for="adhar_no">Enter Aadhar Number  </label>
                  <input type="text" class="form-control"  placeholder="XXXX XXXX XXXX" name="cAadhar"  id="adhar_no">
                  <button  type="submit" class="btn btn-primary" >Proceed For OTP </button>
                 </form>
-
-                <form action=""    th:action="@{/bank_mitra/pan_card_link_proceed}"  method="post"  th:if="${session.generate_otp}"  >
+                 <!-- th:if="${session.generate_otp}"  -->
+                <form action=""    th:action="@{/bank_mitra/pan_card_link_proceed}" th:if="${session.generate_otp}"  method="post"   >
                   <div class="service_content_div_otp_inpu" >
                    <input type="text" class="form-control" placeholder="0" maxlength="1"  required  name="otp1" >
                    <input type="text" class="form-control" placeholder="0" maxlength="1" required   name="otp2">
@@ -62,13 +62,13 @@
 
             <div class="service_content_div"   th:if="${session.open_atm}"  >
                 <form action=""  th:action="@{/bank_mitra/atm_card_apply}"  method="post"  >
-                 <label for="name">FullName : </label>
+                 <label for="name">FullName  </label>
                  <input type="text" class="form-control" placeholder="SLB pvt ltd." name="name"  id="name">
-                 <label for="cAadhar"> Aadhar Number : </label>
+                 <label for="cAadhar"> Aadhar Number  </label>
                  <input type="text" class="form-control"  placeholder="XXXX XXXX XXXX" name="cAadhar"  id="cAadhar">
-                 <label for="accountNo">Account Number : </label>
+                 <label for="accountNo">Account Number  </label>
                  <input type="text" class="form-control"  placeholder="XXXX XXXX XXXX" name="accountNo"  id="accountNo">
-                 <label for="cPhone">Phone No. : </label>
+                 <label for="cPhone">Phone No.  </label>
                  <input type="text" class="form-control"  placeholder="XXXX XXXX XX" name="cPhone"  id="cPhone">
             
                  <button  type="submit" class="btn btn-primary" >Submit For Apply ATM Card </button>
@@ -77,9 +77,9 @@
          <!--   th:if="${session.open_npci}"  -->
             <div class="service_content_div"   th:if="${session.open_npci}"  >
                 <form action=""   th:action="@{/bank_mitra/make_npci_link_otp}"  method="post"   >
-                 <label for="accountNo">Enter Account Number : </label>
+                 <label for="accountNo">Enter Account Number  </label>
                  <input type="text" class="form-control" placeholder="XXXXXXXXXXXXXXXXX" name="accountNo"  id="accountNo">
-                 <label for="adhar_no">Enter Aadhar Number : </label>
+                 <label for="adhar_no">Enter Aadhar Number  </label>
                  <input type="text" class="form-control"  placeholder="XXXX XXXX XXXX" name="cAadhar"  id="adhar_no">
                  <button  type="submit" class="btn btn-primary" >Proceed For OTP </button>
                 </form>

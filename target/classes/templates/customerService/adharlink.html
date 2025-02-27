@@ -12,8 +12,9 @@
                
             <h1>LINK YOUR AADHAR WITH YOUR ACCOUNT</h1>
              <div class="linkadharmain">
-                <div class="alert alert-primary" role="alert" th:if="${session.linkalert}">
-                    Aadhar has been linked successfully !!!
+                
+                <div  th:if="${session.Aadharmessage}"  class="alert" th:classappend="${session.Aadharmessage.type}" role="alert" >
+                    [[${session.Aadharmessage.message}]]
                 </div>
             <form action="#" th:action="@{/customer/customerDashboard/LinkAdhar_process}"  method="post">
                 <input type="text" placeholder="Enter you aadhar no : 1234 1234 1234" class="form-control" name="cAadhar">
@@ -22,8 +23,8 @@
                 <button class="btn btn-primary btn-block" type="submit">LINK AADHAR</button>
             </form>
 
-            <div class="checkadharstausinlink" th:if="${session.linked}" >
-                <a href="#" th:href="@{/customerDashboard/adharstaus}">
+            <div class="checkadharstausinlink" th:if="${session.Aadharmessage}" >
+                <a href="#" th:href="@{/customer/customerDashboard/adharstatus}">
                 <button class="btn btn-primary btn-block" style="width: 44vw;" type="submit">CHECK AADHAR STATUS</button></a>
             </div>
            </div>

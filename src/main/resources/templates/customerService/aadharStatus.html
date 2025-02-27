@@ -16,6 +16,12 @@
                <div class="alert alert-primary" role="alert" th:if="${session.error}">
                    Some error occured !!!!
                </div>
+               <div class="alert alert-primary" role="alert" th:if="${session.alertt}">
+                Aadhar has been link successfully !!
+              </div>
+               <div class="alert alert-primary" role="alert" th:if="${session.otp}">
+                AOtp Sent successfully !!!
+              </div>
                
            <form action="#" th:action="@{/customer/customerDashboard/LinkAdhar_getOtp}" method="post">
                <input type="text" placeholder="Enter you aadhar no : 1234 1234 1234" class="form-control" name="cAadhar" required>
@@ -23,7 +29,7 @@
                <button class="btn btn-primary btn-block" type="submit">GET OTP</button>
             </form>
 
-            <form action="#" th:action="@{/CustomerDashborad/adhatStatus}" method="post"  th:if="${session.showProcessForm}">
+            <form action="#" th:action="@{/customer/customerDashboard/adharStatus}" method="post"  th:if="${session.showProcessForm}">
                <input type="text" placeholder="Enter otp : 1234" class="form-control" name="newOtp" required>
                <button class="btn btn-primary btn-block" type="submit">PROCEED</button>
             </form>
@@ -34,7 +40,7 @@
            </div>
            <div class="checkadharstausinlink   checkadharstausinlinkK"  th:if="${session.notlinked}" >
             <h3>Aadhar is not linked !!!</h3>
-            <a href="#"  th:href="@{/customerDashboard/adharlink}">
+            <a href="#"  th:href="@{/customer/customerDashboard/adharlink}">
                 <button class="btn btn-primary btn-block" type="submit">LINK AADHAR NOW </button>
             </a>
            </div>

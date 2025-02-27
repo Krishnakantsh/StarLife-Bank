@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import com.starLife.in.Entity.Customer;
+import com.starLife.in.helper.Message;
 import com.starLife.in.helper.SigninHelper;
 import com.starLife.in.repository.CustomerRepository;
 import com.starLife.in.service.EmailService;
@@ -61,19 +62,30 @@ public class LinkController {
     
     Customer customer = this.cstmrRepo.getUserByUserName(p.getName());
 
-    if(customer.getUserId().equals(Userid)){
-           if(customer.getcAadhar() == null){
-               customer.setcAadhar(aadhar_num);
+    System.out.println("current adhar : "+aadhar_num);
+    System.out.println("current userid : "+Userid);
+    System.out.println("saved adhar : "+ customer.getUserId());
+    System.out.println("saved userid : "+ customer.getcAadhar());
+
+    if(customer.getUserId().equals(Userid)  && customer.getcAadhar().equals(aadhar_num)  ){
+      
+           if(customer.getAdharLinkStatus().isEmpty()){
                customer.setAdharLinkStatus("done");
                this.cstmrRepo.save(customer);
-               session.setAttribute("linkalert", "linkalert");
-               session.setAttribute("linked", "linked");
+               Message message = new Message("alert-success" , "Aadhar has been linked successfully  !!");
+               session.setAttribute("Aadharmessage",message);
                return "customerService/adharlink";
-           }         
+           } 
+           else{
+            Message message = new Message("alert-success" , "Aadhar already linked !!");
+            session.setAttribute("Aadharmessage",message);
+
+            return "customerService/adharlink";
+           }        
     }
 
-    session.setAttribute("linked", "linked");
-    session.setAttribute("error", "error");
+    Message message = new Message("alert-danger" , "Some error occured");
+    session.setAttribute("Aadharmessage",message);
 
     return "customerService/adharlink";
 }
@@ -84,14 +96,14 @@ public class LinkController {
 
      
 
-@GetMapping("/adharstaus")
+@GetMapping("/adharstatusForm")
 				 public String adharStatus(Model m, Principal p, HttpSession session) {
 					 
 					String username = p.getName();
 					 
 					Customer customer = this.cstmrRepo.getUserByUserName(username); 	
 						 
-					 m.addAttribute("title", " Aadhar Status : checked ");
+					 m.addAttribute("title", " Aadhar Status : Form ");
 					 m.addAttribute("customer", customer);
 					 session.removeAttribute("linkeddd");
            session.removeAttribute("showProcessForm");
@@ -145,7 +157,7 @@ public class LinkController {
 
   // // ADHAR STATUS process handler................ 
 
-@PostMapping("/adhatStatus")
+@PostMapping("/adharStatus")
       public String adharStatusProceed(Principal p, @ModelAttribute Customer cust, Model m , HttpSession session, @ModelAttribute SigninHelper SigninHelper){
                
       String savedotp =(String) session.getAttribute("otp");
@@ -154,8 +166,8 @@ public class LinkController {
       String currOtp = SigninHelper.getNewOtp();
       
       Customer custo = this.cstmrRepo.getUserByUserName(p.getName());
-      System.out.println(currOtp);
-      System.out.println(savedotp);
+      // System.out.println(currOtp);
+      // System.out.println(savedotp);
 
        System.out.println(adharr);
        System.out.println(custo.getcAadhar());
@@ -169,6 +181,7 @@ public class LinkController {
            }else{
              session.setAttribute("notlinked","notlinked");
              session.removeAttribute("linkedd");
+             session.removeAttribute("otp");
            }   
       }
             return "customerService/aadharStatus";
@@ -190,8 +203,6 @@ public class LinkController {
         session.setAttribute("yesKyc", "KYC-complete");
       }  
       m.addAttribute("customer", customer);
-      
-      System.out.println(customer);
       m.addAttribute("title", "KYC- Make & status");
       
     	 return "customerService/ekyc";
@@ -206,13 +217,6 @@ public String processKyc(Principal p, @ModelAttribute Customer cust, Model m , H
   String username = p.getName();
     	 
   Customer cstmr = this.cstmrRepo.getUserByUserName(username); 
-
-  System.out.println(cust.getcPhone());
-  System.out.println(cstmr.getcPhone());
-  System.out.println(cust.getcEmail());
-  System.out.println(cstmr.getcEmail());
-  System.out.println(cust.getName());
-  System.out.println(cstmr.getName());
 
   if( (cstmr.getName().equals(cust.getName()))  &&  (cstmr.getcEmail().equals(cust.getcEmail())  ) && (cstmr.getcPhone().equals(cust.getcPhone())  )){
        
@@ -231,11 +235,9 @@ public String processKyc(Principal p, @ModelAttribute Customer cust, Model m , H
 }
 
 
-
 // pancard adhar css............................................................
 
-     
-
+    
  @GetMapping("/pancard_stat")
 	public String pancard(Model m, Principal p, HttpSession session) {
 

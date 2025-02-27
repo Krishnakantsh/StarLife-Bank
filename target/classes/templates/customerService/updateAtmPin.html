@@ -19,18 +19,19 @@
                 </div>
 
                 <form action="#" th:action="@{/customer/customerDashboard/atmpinchangeGetOTP}" method="get">
-                <input type="text" placeholder="Enter atm's last six digit " th:value="${lastSixDigit}"  name="atmNumber" class="form-control" required>
+                <input type="password" placeholder="Enter atm's last six digit " th:value="${lastSixDigit}"  name="atmNumber" class="form-control" required>
                 
                 <button type="submit" class="btn btn-primary btn-block">GET OTP</button>
                 </form>
                
-                <form action="#" th:action="@{/customerDashboard/UpdateAtnPinOtpVerify}" method="post" th:if="${session.showOtpTakeForm}">
-                    <input type="text" placeholder="Enter otp" th:value="${currOtp}"  name="newOtp" class="form-control" required>
+                <form action="#" th:action="@{/customer/customerDashboard/UpdateAtnPinOtpVerify}" method="post" th:if="${session.showOtpTakeForm}">
+                    <input type="password" placeholder="Enter otp" th:value="${currOtp}"  name="newOtp" class="form-control" required>
                     <button type="submit" class="btn btn-primary btn-block">Verify</button>
                 </form>
-                <form action="#" th:action="@{/customerDashboard/updateAtmPin}" method="post" th:if="${session.showUpdateform}">
-                    <input type="text" placeholder="New Pin"  name="newPin" class="form-control" required>
-                    <input type="text" placeholder="Confirm Pin"  name="ConfirmPin" class="form-control" required>
+                
+                <form action="#" th:action="@{/customer/customerDashboard/updateAtmPin}" method="post" th:if="${session.showUpdateform}">
+                    <input type="password" placeholder="New Pin"  name="newPin" class="form-control" required>
+                    <input type="password" placeholder="Confirm Pin"  name="ConfirmPin" class="form-control" required>
                     <button type="submit" class="btn btn-primary btn-block">UPDATE PIN</button>
                 </form>
                 </div>

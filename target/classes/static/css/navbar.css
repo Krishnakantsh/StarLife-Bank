@@ -58,16 +58,14 @@ body{
 .header ul li{
 	list-style:none;
 	font-size:1vw;
-	color:white;
 	cursor: pointer;
 	font-weight: 500;
+	color:rgb(255,255,255);
 }
 
 .header ul li a{
 
-	color:white;
-
-
+	color:rgb(255,255,255);
 }
 
 .highlighted{
@@ -133,27 +131,30 @@ body{
 	width:15vw;
 	height:fit-content;
 	background:white;
-	border:2px solid green;
 	display:none;
 	flex-direction:column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5vw 0;
-    z-index:55;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5vw 0;
+  z-index:500;
+	border-radius: 15px;
+	box-shadow: 1px 1px 15px rgba(0,0,0,0.3), -1px -1px 15px rgba(0,0,0,0.3) ;
 }
 
 .profileImgSignInDiv{
 	height:5vw;
 	width:5vw;
 	border-radius:50%;
-	border:2px solid black;
+	overflow: hidden;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.3), -1px -1px 5px rgba(0,0,0,0.3) ;
 }
 
 .profileImgSignInDiv img{
 	width:100%;
 	height:100%;
 	object-fit:cover;
-	object-position:center;
+	object-position:top;
+	border-radius:50%;
 }
 
 .details{
@@ -173,13 +174,11 @@ body{
 	font-size:1.2vw;
 }
 
-
-
 .profileSignDiv button{
 	width:80%;
-	height:4vw;
+	height:3vw;
 	margin-top:0.2vw;
-	background:rgb(221,221,221);
+	background:rgb(240, 240, 240);
 	font-size:1.2vw;
 	font-weight:500;
 	
@@ -187,10 +186,9 @@ body{
 .details button{
 	background:green;
 	color:white;
-	font-size:1vw;
+	font-size:1.2vw;
 	padding:0.5vw 2vw;
 	font-weight:500;
-	
 }
 
 .details button:hover{
@@ -201,10 +199,10 @@ body{
 
 .spinnerDiv{
 	display:none;
+	color: rgb(255,255,255);
+	font-size: 6vw;
+	margin-right: 3vw;
 }
-
-
-
 
 .adminPageMainDiv{	
 	display:flex;
@@ -217,7 +215,7 @@ body{
 
 
 .leftSide{	
-    display:flex;
+  display:flex;
 	align-items:center;
 	flex-direction:column;
 	justify-content:flex-start;
@@ -236,7 +234,7 @@ body{
 	height:8vw;
 	margin-top:2vw;
 	border-radius:50%;
-	box-shadow: 1px 1px 10px  black;
+	box-shadow: 1px 1px 5px rgba(23,141,241,0.5),1px 1px 15px rgba(23,141,241,0.5),1px 1px 25px rgba(23,141,241,0.5);
 	padding:1px;
 }
 
@@ -245,6 +243,7 @@ body{
 	height:100%;
 	object-fit:cover;
 	border-radius:50%;
+	object-position: top;
 }
 
 
@@ -307,7 +306,6 @@ body{
 .row1{
 	width:100%;
     height:fit-content;
-    box-shadow:inset 1px 1px 10px #654520;
 }
 
 .row1MainContentDiv{
@@ -317,11 +315,9 @@ body{
 .accountholderDiv{
 	width:100%;
 	height:5vw;
-	border:0.1vw solid #654520;
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	box-shadow:inset 1px 1px 10px #654520;
 }
 .accountholderDiv h1{
 	color:rgb(23,144,241);

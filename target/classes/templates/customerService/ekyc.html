@@ -16,7 +16,8 @@
             <div class="linkadharmain">
                <div class="alert alert-danger" role="alert" th:if="${session.kycerror}">
                   Some Error occured !!!
-               </div>
+            </div>
+            
            <form action="#" th:action="@{/customer/customerDashboard/ekycdone}" method="post">
             <input type="text" placeholder="Enter your name" class="form-control" name="name" required>
             <input type="text" placeholder="Enter your email" class="form-control" name="cEmail" required>

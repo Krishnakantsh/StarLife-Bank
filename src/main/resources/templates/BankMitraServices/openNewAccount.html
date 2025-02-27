@@ -15,61 +15,56 @@
              <div class="addProduct_container">
                     <div class="addProduct_container_left add_item_detail_card">
                          <h1>Fill Your Details</h1>
-                         <div  th:if="${session.alert}" class="alert accountAlert" th:classappend="${session.alert.type}"  role="alert">          
-                          <p>[[${session.alert.message}]]</p>
+                         <div  th:if="${session.alertt}" class="alert accountAlert" th:classappend="${session.alertt.type}"  role="alert">          
+                          <p>[[${session.alertt.message}]]</p>
                         </div>
-                         <div class="detail_line">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Customer Name</span>
+                         <div class="row detail_line">
                             <input type="text" class="form-control" aria-label="Sizing example input"   aria-describedby="inputGroup-sizing-default"    minlength="3" maxlength="20"   
                              name="name"
+                             placeholder="Enter Name"
                             >                     
                          </div>
-                         <div class="detail_line">
-                           <div class="col-6 d-flex">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Father's Name</span>
-                            <span class="input-group-text">Shri</span>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cFathername"   minlength="3" maxlength="20"      > 
+                         <div class="row detail_line">
+                           <div class="col-12 col-sm-6 d-flex">
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cFathername"   minlength="3" maxlength="20"   placeholder="Enter Father Name"   > 
                            </div>
-                           <div class="col-6 d-flex">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Mother's Name</span>
-                            <span class="input-group-text">Smt. </span>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cMothername"   minlength="3" maxlength="20"   > 
+                           <div class="col-12 col-sm-6 d-flex">
+                         
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cMothername"   minlength="3" maxlength="20" placeholder="Enter Mother Name"  > 
                            </div>                         
                        </div>
     
-                       <div class="detail_line">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Email Id</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  name="cEmail" required   >                     
+                       <div class="row detail_line">
+                        
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  name="cEmail" required  
+                        placeholder="Enter Email" >                     
                      </div>
           
 
-                     <div class="detail_line">
-                      <div class="col-6 d-flex">
-                        <span class="input-group-text" id="inputGroup-sizing-default">Phone No.</span>
-                      <input type="text" class="form-control" aria-label="Sizing example input"  aria-describedby="inputGroup-sizing-default"  name="cPhone"  required  minlength="10" maxlength="10"   >  
+                     <div class="row detail_line">
+                      <div class="col-12 col-sm-6 d-flex">
+                       
+                      <input type="text" class="form-control" aria-label="Sizing example input"  aria-describedby="inputGroup-sizing-default"  name="cPhone"  required  minlength="10" maxlength="10" placeholder="Enter Phone No."  >  
                     
                       </div>
-                      <div class="col-6 d-flex">
-                       <span class="input-group-text" id="inputGroup-sizing-default">Aadhar No. </span>
-                       <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cAadhar"  minlength="12" maxlength="12"   > 
+                      <div class="col-12 col-sm-6 d-flex">
+                       <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cAadhar"  minlength="12" maxlength="12"  placeholder="Enter Aadhar No." > 
                       </div>                         
                   </div>
     
-                     <div class="detail_line">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Nominee Name </span>
-                      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cNomineename"  minlength="3" maxlength="20"   >                     
+                     <div class=" row detail_line">
+                      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cNomineename"  minlength="3" maxlength="20"  placeholder="Enter Nominee Name" >                     
                      </div>
     
-                     <div class="detail_line">
-                      <div class="col-6 d-flex">
-                       <span class="input-group-text" id="inputGroup-sizing-default">Password </span>
-                       <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  name="cpassword"   minlength="8" maxlength="15"   >
-                       <span class="input-group-text"><ion-icon name="eye-off-outline"></ion-icon> </span> 
+                     <div class="row detail_line">
+                      <div class="col-12 col-sm-6 d-flex">
+                       
+                       <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  name="cpassword"   minlength="8" maxlength="15" placeholder="Enter Password"  >
+        
                       </div>
-                      <div class="col-6 d-flex">
-                       <span class="input-group-text" id="inputGroup-sizing-default">Confirm Password </span>
-                       <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="confiemPassword"  minlength="3" maxlength="20"   > 
-                       <span class="input-group-text"> <ion-icon name="eye-off-outline"></ion-icon></span>
+                      <div class="col-12 col-sm-6  d-flex">
+                       <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="confiemPassword"  minlength="3" maxlength="20" placeholder="Confirm Password"  > 
+                
                       </div>                         
                   </div>
     

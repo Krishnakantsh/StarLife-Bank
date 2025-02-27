@@ -9,17 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.AuthenticationProvider;
+
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
@@ -33,8 +32,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @EnableWebSecurity
 public class StarLifeBankConfig {
 
-	// @Autowired
-	// private UserDetailsService getuserDetailsService;
 
 	@Autowired
 	private CustomCustomerDetails getCustomerDetailService;
@@ -72,12 +69,8 @@ public class StarLifeBankConfig {
 		http
 				.csrf(Customizer -> Customizer.disable())
 
-				// .addFilterBefore(new JwtValidator(), BasicAuthenticationFilter.class)
+				.addFilterBefore(new JwtValidator(), BasicAuthenticationFilter.class)
 				.authorizeHttpRequests(request -> request
-				// .requestMatchers("/customer/customerDashboard/**")
-				// .authenticated()
-				// .anyRequest()
-				// .permitAll()
 				.requestMatchers("/customer/**").hasRole("CUSTOMER")
 				.requestMatchers("/bank_mitra/**").hasRole("BANKMITRA")
 				.anyRequest().permitAll()
@@ -85,19 +78,6 @@ public class StarLifeBankConfig {
 				
 
 				.formLogin(login -> login
-				// .loginPage("/signin") // Specify the custom login page
-				// .loginProcessingUrl("/dologin")
-				// .defaultSuccessUrl("/customer/customerDashboard/homepage" , true)
-				// .permitAll() 
-				// .failureUrl("/logininfailed")
-				
-				// .loginPage("/signin").permitAll()
-				// .loginProcessingUrl("/dologin")
-				// .successHandler(successhandler)
-				// .loginPage("/bankmitraLogin").permitAll()
-				// .loginProcessingUrl("/bankmitraDoLogin")
-				// .successHandler(successhandler)
-
 				.loginPage("/signin") // Default login page for Customers
 				.loginProcessingUrl("/dologin")  // Common login processing URL
 				.successHandler(successhandler)
@@ -157,19 +137,8 @@ public class StarLifeBankConfig {
 	}
 
 
-	// Authentication Provider....................................................
 
-	// @Bean
-	// public AuthenticationProvider authenticationProvider() {
-	// 	DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-	// 	provider.setPasswordEncoder(new BCryptPasswordEncoder());
-	// 	provider.setUserDetailsService(userDetailsService);
-	// 	return provider;
-	// }
-
-
-
-	    @Bean
+	  @Bean
     public AuthenticationManager authenticationManager() {
         DaoAuthenticationProvider customerProvider = new DaoAuthenticationProvider();
         customerProvider.setUserDetailsService(getCustomerDetailService);

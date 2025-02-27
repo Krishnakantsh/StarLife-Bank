@@ -9,6 +9,7 @@
   box-shadow: 2px 2px 5px rgb(23,141,241),-2px -2px 5px rgb(23,141,241) ;
   margin-top: 0.5vw;
   border-radius: 10px;
+  height: fit-content;
 }
 
 .updateImageAndName{

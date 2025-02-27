@@ -19,14 +19,6 @@
 
 @media(max-width:768px){
      
-  .TaglineDIV{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    top:20%;
-    left:30%;
-  }
 
   .loginCard{
     height: 50vw;
@@ -291,26 +283,24 @@
     display: block;
   }
 
-  .TaglineDIV{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    top:10%;
-    left:20%;
-  }
+   .TaglineDIV{
+     top: 30%;
+  } 
   .TaglineDIV h1{
-    font-size: 7vw;
-  }
+    font-size: 10vw;
+    white-space: nowrap;
+  } 
   .TaglineDIV button{
     font-size: 4vw;
+    width: fit-content;
+    height: fit-content;
+    white-space: nowrap;
+    padding: 3vw  5vw;
   }  
   .TaglineDIV h2{
-    font-size: 4vw;
+    font-size: 10vw;
   }
-  .screenSlider{
-    height:86vh;
-  }
+
 
   .col1right{
     display: none;
@@ -318,254 +308,623 @@
   .navList{
      display: none;
   }
+
+  .screenSlider{
+    height:45vh;
+    border-radius:none;
+    box-shadow: none;
+  }
+  
+  .screenSlider img{
+    border-radius:none;
+  }
+  
+
   .dotDivContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.4vw;
-    border: 0.1vw solid rgb(255, 111, 0);
-    box-shadow:inset 2px 2px 5px rgb(255, 111, 0);
-    height: fit-content;
+    display: none;
   }
   
   .dotContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width:50vw;
-    height: 10vw;
-  }
-  .active{
-    background-color:rgb(255, 111, 0);
-  }
-  
-  .dotDiv{
-    width: 4vw;
-    height: 4vw;
-    border-radius: 50%;
-    border: 0.1vw solid rgb(255, 111, 0);
-    box-shadow:inset 2px 2px 5px rgb(255, 111, 0);
-  }
-
-  .servicesRo1{
-    display: flex;
-    flex-direction: column;
-  }
-  .digitalBan h1{
-    font-size: 12vw;
-    margin-left: 1vw;
-    margin-top: 1vw;
-  }
-
-  .digitalBan span{
-    font-size: 12vw;
-    margin-left: 2vw  ; 
+    display: none;
   }
 
 
-.DigiBanki_in{
-   width: 60vw;
-}
-
-.DigiBankiItems{
-  width: 60vw;
-  height: 10vw;
-  padding-left: 1vw;
-  font-size: 5vw;
-}
-
-.iButtonDiv{
-  width: 10vw;
-  height: 10vw;
-}
-.iButtonDiv i {
-  font-size: 5vw;
-  color: #E8B86D;
-}
-
-.openYourAc h1,.openYourAc h2{
-  font-size: 8vw;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
-}
-.loginCard{
-    height: 80vw;
-    width: 60vw;
-    top: 40%;
-    left:20vw;
-    z-index: 4;
+  .ServiceDivLogo{
+    display: none;
   }
-  .loginCard h1{
-    font-size: 8vw;
-  }
-  .loginCard input{
-    margin-top: 4vw;
-    font-size: 3vw;
-    padding-left: 1vw;
-    height:6vw;
-    margin-top:1.5vw;
+ 
+  .servicess{
+    height: fit-content;
   }
 
-  .loginCard p{
-    font-size: 6vw;
-    font-weight: 500;
-  }
-  .loginCard button{
-    height: 6vw;
-    margin-bottom: 1vw;
-    font-size: 3vw;
+  .servicesFeaturee{
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(2 , 2fr);
+    height: fit-content;
   }
 
-  .sliderOut{
-    width: 70%;
+  .serviceFeatureCardd{
+    height:70vw;
+    width:48vw;
+    margin:2vw 1vw;
   }
 
   
-  .featureCard{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height:fit-content;
-    width: 54vw;
+  .serviceFeatureCardd:hover{
+    scale:none;
+    transform:none;
   }
-
-  .featureCardImgDiv{
-    height: 50vw;
-    width: 50vw;
-    border:1vw solid #B3C8CF;
-    margin-bottom: 10vw;
-  }
-
-  .featureCard button{
-    height: 9vw;
-    font-size: 5vw;
-    font-weight: 500;
-    border-radius: 10px;
-    padding: 1vw;
-  }
-
-
-  .slideIconDiv{
-    padding: 3vw;
-  }
-
-
-  .leftSlider, .rightSlider{
-    width: 10vw;
-    height: 10vw;
-    font-size: 5vw;
   
-  }
 
-  .SecurityMainDiv{
-    height:50vw;
-    padding:6vw;
+  .srvsFddetailss{
+    padding-top:1vw;
+    padding:0.2vw;
   }
-  .securityWarn{
-    display: flex;
-    flex-direction: column;
+  
+  .srvsFddetailss h1{
+    margin-top: 5vw;
+    font-size:5vw;
+    color:rgb(11, 125, 224);
+  }
+  
+  .srvsFddetailss a{
     width: 100%;
   }
-  .securityWarn h1{
-     font-size: 5vw;
-     color: #6482AD;
-     text-shadow: 0.08vw 0.1vw 0.5vw #6482AD;
-     padding-left: 2vw;
+  .srvsFddetailss button{
+    font-size:4vw;
+    width: 100%;
+    height: fit-content;
+    color:rgb(11, 125, 224);
   }
   
-  .CyberBtn{
-    background: #CD5C08;
-    width: 20vw;
-    height: 3vw;
-    margin-top: 3vw;
+
+  .homepageSection2{
+    height:fit-content;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;	
+  }
+  
+  .openAccountOuterDiv{
+    height:25vw;
+    width:100%;
+    margin:3vw;
+    padding:2vw;
+    padding-right:2;
+  }
+
+  .openAccountOuterDiv h1{
+    font-size:6vw;
+  }
+  
+
+  
+  .balAndStatement{
+    display:grid;
+    grid-template-columns: repeat(2 , 1fr);
+    width:100%;
+    height:fit-content;
+    gap: 5px;
+  }
+  
+  .balanceCard , .statementCard{
+    height:48vw;
+    width:48vw;
+  }
+  
+  
+  .balanceCard img , .statementCard img{
+    width:100%;
+  }
+  
+  .balanceCard h3 , .statementCard h3{
+    font-size:5vw;
+  }
+  
+
+
+  .bookingsAndInsurenceOuter{
+    flex-direction: column;
+    height:fit-content;
+    padding: 2vw;
+    gap: 15px;
+  }
+  
+  .bookingsAndInsurenceInner{
+    flex-direction: column;
+    width:100%;
+    height:fit-content;
+    gap: 15px;
+  }
+  
+  .bookingdiv, .insurenceDiv{
+    width: 100%;
+    padding: 2vw;
     border: none;
-    border-radius: 10vw;
-    margin-left: 20vw;
-    font-size: 2vw;
-    font-family: verdana;
-    font-weight:600;
-    color: white;
+  }
+
+
+  .bookingdiv h1{
+     font-size:8vw;
+     margin: 2vw 0;
+  }
+
+  
+  .ticketBookingContentDiv{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    height:fit-content; 
+    width:100%; 
+    margin-top:0.5vw;
+    gap: 15px;
+  }
+
+  .loansArenaDiv h1{
+    font-size: 9vw;
   }
   
+  .loansArenaDiv h1:hover{
+    transform: scale(1);
+
+  }
   
-.messageContainer{
-	display:flex;
-	flex-direction:column;
+  .ticketBookingFirstRow, .ticketBookingSecondRow{
+      flex-direction: column;
+      height:fit-content;
+      width:100%;
+      gap: 15px;
+  }
+  
+  .ticketBookingFirstRow a, .ticketBookingSecondRow a{
+    width: 100%;
+  }
+  
+  .loanCard{
+    height:45vw;
+    width:100%;
+    padding: 2vw;
+  }
+  
+  .loanCard:hover{
+    transform:scale(1);
+  }
+
+  .loanCard h6{
+    font-size:5vw;
+    text-align: center;
+  
+  }
+  .loancardImgDiv{
+    width:30vw;
+    height:30vw;
+  }
+
+  
+  .premiumServicesOuter , .money_transfer_div{
+    height:fit-content;
+    padding:0 2vw;
+  }
+
+  .money_transfer_div{
+    height: fit-content;
+  }
+
+  .money_transfer_div a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width: 100%;
+  }
+
+  
+  
+  .premiumServicesInner, .money_transfer_div_inner{
+    width: 100%;
+  }
+  
+  .premiumServicesInnermost{
+    height:100%;
+    width:100%;
+  }
+  
+  .money_transfer_div_innermost{
+    font-size: 10vw;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    height: 30vw;
+    color: rgb(23,141,241);
+  }
+  
+  .premiumServicesInnermost{
+    flex-direction: column;
+    height: fit-content;
+    border: none;
+    }
+
+.viewYourdashboard{
+	width:100%;
+  border:1px solid rgb(23,144,241);
+  margin: 0;
+  padding: 2vw;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgb(23,141,241), -1px -1px 5px rgb(23,141,241);
+  margin-top: 2vw;
+}
+
+.viewYourDashHeading{
+	height:fit-content;
+	font-size:6vw;
+
+}
+
+.premiumServicesInner{
+  border: none;
+  box-shadow: none;
+}
+
+.preiumCardsDiv{
+	display:grid;
+  grid-template-columns: repeat(2,1fr);
+	width:100%;
+  gap: 15px;
+  margin-top: 5vw;
+}
+
+.preiumCardsDiv a{
+  width: 100%;
+}
+
+
+.premiumCard{
+	border:1px solid rgb(23,141,241);
+	height:45vw;
 	width:100%;
 }
 
-.mesContaLeft{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	height:70vw;
-}
-
-.mesContaLeft img{
-	width:36.5vw;
-	height:53vw;
-	object-fit:cover;
-	position:center;
-}
-.mesContaERight{
-	display:flex;
-	justify-content:center;
-	align-items:start;
-	height:90vw;
-	padding-top:5vw;
-}
-
-.messageDiv{
-	height:80vw;
-	width:100%;
-	position:relative;
-}
-
-.HeadingDiv{
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
-	align-items:center;
-}
-
-.HeadingDiv p{
-	font-size:6vw;
-	font-family:700;
-}
-.messageDiv h1,.messageDiv h3{
-	margin-top:4vw;
-	font-size:6vw;
+.premiumCard:hover{
+	transform:scale(1);
 }
 
 
-.messageDiv h4{
-	padding:1vw 3vw;
-	margin-top:3vw;
-	font-size:3.5vw;
-	box-shadow:0vw 0.3vw 0.5vw black;
-	border-radius:30px;
-}
-
-#NoteAlert{
-	margin-top:2vw;
-	color:black;
-	font-size:3vw;
-}
-
-
-.openAccDiv{
-	justify-content:center;
-	padding:2.5vw;	
-}
-
-
-.openAccountPageLink a{
+.premiumCardMain h5{
 	font-size:5vw;
+  text-align: center
 }
 
-  
+
+.locationDiv{
+  display: none
+}
+
+
+
+
+.mainfooter{
+  flex-direction: column;
+	justify-content:center;
+  align-items: center;
+	width:100%;
+}
+
+.leftpart,.rightPart{
+  display: flex;
+	width:100%;
+  flex-direction: column;
+	justify-content:center;
+  align-items: center;
+  padding: 2vw;
+}
+.leftpart h1, .rightPart h1{
+	font-size:7vw;
+  margin-top: 5vw;
+}
+.leftpart ul, .rightPart ul{
+  text-align: center;
+	line-height:8vw;
+  font-weight: 500;
+}
+
+
+.socialLinksDiv{
+	height:fit-content;
+	width:100%;
+}
+
+.subNewsLetterDiv{
+	width:100%;
+	height:fit-content;
+	text-align: center;
+  padding: 2vw;
+}
+
+.subNewsLetterDiv h1{
+  color: orange;
+  font-size: 5vw;
+}
+
+.subNewsLetterDiv input{
+	width:100%;
+	height:fit-content;
+
+}
+
+.socialIconsDiv h1{
+	font-size:5vw;
+	color:orange;
+}
+
+.allsocialIconsContainer{
+	width:100%;
+	height:fit-content;
+	display:flex;
+	justify-content:center;	
+	gap:1.5vw;
+}
+.mainSocialIconBurgerFooter{
+	width:10vw;
+	height:10vw;
+	
+}
+
+.loginMainConainer{
+	max-height:calc(100vh - 7vw);
+	margin-top:7vw;
+}
+
+.lgpageImgDiv{
+	display:none;
+}
+
+
+.lgImgDivRight{
+	height:100%;
+	width:100%;
+  margin-top: 5vw;
+	/* border: 1px solid rgb(10, 9, 9); */
+}
+
+.OuterCardDiv{
+	width:100%;
+	height:fit-content;
+  gap: 3px;
+  padding: 5vw;
+}
+
+.OuterCardDiv h1{
+	font-size:6.5vw;
+	color:rgb(23,144,241);
+}
+
+.loginWithThirdPartyDiv{
+	width:100%;
+	height:fit-content;
+}
+
+.logInTextDiv, .loginIconDiv{
+	width:100%;
+	height:10vw;
+}
+
+.logInTextDiv a{
+	font-size:5vw;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+
+.loginIconDiv{
+	width:20%;
+}
+
+.loginIconDiv i{
+	font-size:4vw;
+  color: rgb(23,141,241);
+}
+
+
+
+.IdPassLoginDiv{
+	gap:1vw;	
+}
+
+.IdPassLoginDiv h2{
+   font-size:4vw;
+   color:rgb(23,141,241);
+}
+.passwordInput{
+  height:10vw;
+}
+
+.passwordInput input{
+	width:100%;
+  height: 100%;
+}
+
+
+.eyeIconDiv{
+	width:10vw;
+	height:100%;
+}
+
+.eyeIconDiv i{
+	font-size:4vw;
+}
+
+
+.Consent_ForgotPasswordDiv label{
+	font-size:2.5vw;
+}
+
+
+.captureDiv{
+	height:10vw;
+	width:45%;
+	letter-spacing:0.5vw;
+	padding:0;
+}
+.captureCodeDiv input{
+	float:right;
+	margin-left:2vw;
+}
+
+
+
+.captureCover{
+	width:100%;
+	height:100%;
+  padding: 1vw;
+}
+
+.refreshDiv{
+
+	height:8vw;
+}
+
+
+.bank_mitra_guideline_container{
+  margin-top: 18vw;
+}
+
+.bank_mitra_guideline_container h1{
+  font-size: 5vw;
+  position: sticky;
+  top: 20vw;
+}
+
+.bank_mitra_guideline_container h2{
+  margin-top: 1vw;
+  font-size: 5vw;
+}
+
+.bank_mitra_guideline_container p{
+  margin-top: 0;
+}
+
+.checkbox_div{
+  margin-top: 2vw;
+  font-size: 5vw;
+  font-weight: 500;
+}
+
+
+.guide_proceed_btn{
+  background:rgb(253, 153, 3);
+  margin-top: 1.5vw;
+  width: 100%;
+  font-size:2.5rem;
+
+}
+
+
+.innerdiv{
+  height: 0vw;
+  width: 0vw;
+  background: rgb(23,141,241);
+  position: absolute;
+  top: -2vw;
+  right: -2vw;
+  transition: 1s all;
+  border-radius: 50%;
+}
+
+
+.guide_proceed_btn:hover .innerdiv {
+   width: 20vw;
+   height: 8vw;
+   z-index: 2;
+}
+
+
+.guide_proceed_btn p{
+  position: relative;
+  z-index: 5;
+}
+
+.guide_proceed_btn ion-icon{
+  z-index: 5;
+  --ionicon-stroke-width: 5vw;
+  font-size:15vw;
+}
+
+
+
+/*  bank mitra registration mediaQuery ..................... */
+
+.bank_mitra_register_container h1{
+  font-size: 2.5rem;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgb(23,141,241) , -1px -1px 1px rgb(23,141,241);
+}
+
+.messagee{
+  width: 100%;
+}
+
+.messagee p{
+  margin-top:3vw;
+}
+
+
+.fileUploaderBoxOuter{
+  width:100%;
+}
+
+.fileUploaderBoxInner{
+  padding:2vw;
+}
+
+
+.headingDiv h2{
+  font-size: 7vw;
+  color: rgb(253, 153, 3);
+}
+
+.formFiled button{
+  font-size: 5vw;
+}
+
+.formFiled p{
+  margin-top: 3vw;
+  font-size: 4vw;
+}
+
+
+
+
+/* account open self mediaQuery  */
+
+.accountAlert{
+	width: 62vw;
+}
+
+
+.newAcMnCtnr{
+  width: 100%;
+	margin-top:20vw;
+  padding: 0.5vw;
+}
+
+.openAccRowInner{
+padding: 5vw 0;
+}
+
+
+.openYourAc h1{
+	font-size:6.5vw;
+   margin: 1.5vw 0;
+}
+
+
+.OpenAccountDiv{
+	margin-top:4vw;
+}
+
+
+
+
+
+
 
 };
-  
-
-

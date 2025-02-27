@@ -2,16 +2,28 @@
 
 
 .maincontainerr, .newAcMnCtnr, .moneyTransMain, .updatepinmain, .debitcardMain, .viewstatementmain{
-  height:86vh;
+  min-height:86vh;
   box-shadow: inset 1px 1px 30px rgb(23,144,241);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content:start;  
   padding: 2vw;
+  height: fit-content;
 } 
 
+.main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height:calc(100vh - 6.7vw);
 
+}
+
+.alert{
+  width: 100%;
+}
 .maincontainerr h1 , .updatepinmain h1, .debitcardMain h1{
   font-family: verdana;
   font-size: 3vw;
@@ -29,6 +41,13 @@
   flex-direction: column;
   align-items: center;
   gap: 1vw;
+}
+
+.sideBarSlider{
+	display:none;
+	color: rgb(255,255,255);
+	font-size: 6vw;
+	margin-right: 3vw;
 }
 
 .formDiv h1{
@@ -73,7 +92,6 @@
   flex-direction: column;
 }
 
-
 .updateOuter h1{
   font-family: verdana;
   font-size: 3vw;
@@ -81,10 +99,18 @@
   color: rgb(23,144,241);
   text-shadow: 0.1px 0.1px 5px rgb(23,144,241);
 }
+.updateDetailsDiv{
+  box-shadow: none;
+  background: none;
+  border: 1px solid rgb(23,144,241);
+}
 
+.updateDetailsDiv:hover{
+  box-shadow: 1px 1px 10px rgb(23,144,241),-1px -1px 10px rgb(23,144,241);
+}
 .updateDetailsDiv a{
   text-decoration: none;
-  color: brown;
+  color: RGB(23,141,241);
 }
 
 .OpenAccountDiv{
@@ -141,8 +167,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width:30vw;
+  width:15vw;
   height: 50%;
+}
+.midimagediv img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 
@@ -153,6 +184,14 @@
   width: 50%;
   height: fit-content;
   margin-top: -10px;
+}
+
+.formDivv form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 
 .formDivv input{
@@ -215,12 +254,17 @@
   border: 0.1vw solid rgb(23,144,241);
   box-shadow: 1px 1px 5px rgb(23,144,241);
   padding:1vw ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .notGenerateDebitCardDiv button{
   margin-top: 1.5vw;
   font-size: 1.5vw;
   font-family: verdana;
+  font-weight: 500
 }
 
 .card{
@@ -316,55 +360,133 @@
 
 /*view statement css ...........................................................*/
 
-
-.viewstatementfo{
-  width: 100%;
+.viewstatementmain{
+  height: fit-content;
+  min-height: 86vh;
+  justify-content: start;
 }
 
+
+.viewstatementmain h2{
+  font-size: 2vw;
+  color: rgb(23,144,241);
+  width: 100%;
+  text-align: center;
+}
+
+.dateWiseFilter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  padding-bottom:2vw;
+}
+
+.dateWiseFilterRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+}
+
+.dateWiseFilterRow h1{
+  font-size: 1.5vw;
+  color: rgb(23,144,241);
+  width: 30%;
+}
+
+.dateWiseFilterRow input{
+  font-size: 1.5vw;
+  color: rgb(23,144,241);
+  width: 70%;
+}
+
+.dateWiseFilterRow button{
+  width: 100%;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
 
 .statementformdiv{
   width:100%;
   display:flex ;
   justify-content:center ;
   align-items: center;
+  height:fit-content;
 }
 
-.startDateDiv{
-  display: flex;
+
+
+.statementformdiv form{
+  width: 100%;
+  justify-content:center ;
   align-items: center;
-  gap: 2vw;
-}
-.startDateDiv h1{
-  font-size: 1.5vw;
-  color: rgb(23,144,241);
-}
-.viewstatementfo{
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
+  height:fit-content;
+  gap: 10vw;
 }
 
-.startDateDiv input{
-  width: 10vw;
+.specificTimeFilter{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  margin-bottom: 5vw;
+  width: 100%;
+  padding: 1vw 0;
+  gap: 15px;
 }
+
+.specificTimeFilter button{
+  width: 25%;
+  font-size: 1.2vw;
+  font-weight: 500;
+  color: rgb(255,255,255);
+}
+
 
 .statementHeader{
-  width: 100%;
-  border: 0.1vw solid rgb(23,144,241);
-  height: 3vw;
-  box-shadow: 1px 1px 5px rgb(23,144,241);
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
   justify-content: space-between;
-  padding: 0 2vw;
+  width: 100%;
+  max-width: 100vw;
+  height:fit-content;
+  padding: 1vw 2vw;
   margin-bottom: 0.5vw;
+  overflow-x:scroll;
+  border-radius: 10px;
 }
-.serialDiv{
+
+.statementHeader::-webkit-scrollbar{
+  display: none;
+}
+
+.statementHeaderOuter, .statementHeaderItems{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 1vw;
+  box-shadow: 1px 1px 3px rgb(0,0,0),  -1px -1px 3px rgb(0,0,0);
+  border-radius: 10px;
+}
+
+.statementHeaderItems{
+  box-shadow: 1px 1px 3px rgb(23,141,241),  -1px -1px 3px rgb(23,141,241);
+}
+.statementHeaderOuter .item , .statementHeaderItems .item{
   height: 100%;
   width:20%;
   display: flex;
   align-items: center;
   justify-content:start;
+  padding:1vw;
+  padding-left: 2vw;
+  font-size: 1.2vw;
+  font-weight: 500;
 }
 
 
@@ -388,8 +510,9 @@
   margin-top: 2vw;
   color: rgb(23,144,241);
   font-size: 5vw;
-
 }
+
+
 .adDiv{
   width: 100%;
   height: 5vw;

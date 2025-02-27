@@ -14,7 +14,6 @@
     />
     <link rel="stylesheet" href="#" th:href="@{/css/home.css}" />
     <link rel="stylesheet" href="#" th:href="@{/css/navbar.css}" />
-    <link rel="stylesheet" href="#" th:href="@{/css/mediaQuery.css}" />
     <link rel="stylesheet" href="#" th:href="@{/css/message.css}" />
     <link rel="stylesheet" href="#" th:href="@{/css/newAcountOpenPage.css}"/>
     <link rel="stylesheet" href="#" th:href="@{/css/loginpage.css}"/>
@@ -25,7 +24,9 @@
     <link rel="stylesheet" href="#" th:href="@{/css/uploadFilepage.css}"/>
     <link rel="stylesheet" href="#" th:href="@{/css/BankMitraCss/HomePage.css}">
     <link rel="stylesheet" href="#" th:href="@{ css/others/bank_mitra_guideline.css}">
-
+    <link rel="stylesheet" href="#" th:href="@{/css/others/AboutUs.css}">
+    
+    <link rel="stylesheet" href="#" th:href="@{/css/mediaQuery.css}" />
 	<title th:text="${title}"></title>
 </head>
 <body>
@@ -35,39 +36,39 @@
               </div>
            </div>
 	    <div class="header"  >
-        <a href="#" th:href="@{/home}"><div class="logoDiv">Star Life Bank</div></a>
+        <a  th:href="@{/home}"><div class="logoDiv">Star Life Bank</div></a>
         <div class="navList">
           <ul>
-            <li class="list-item highlighted"><a href="#" th:href="@{/home}">HOME</a></li>
-            <li class="list-item "><a href="#" th:href="@{/uploadFilePage}">ABOUT</a></li>
+            <li class="list-item highlighted"><a  th:href="@{/home}">HOME</a></li>
+            <li class="list-item "><a  th:href="@{/home/about}">ABOUT</a></li>
             <li class="list-item">NRI BANKING</li>
-            <li class="list-item"><a href=""  th:href="@{/bank_mitra/dashboard}">BANK MITRA LOGIN</a></li>
-             <li class="list-item"><a href=""  th:href="@{/customer/customerDashboard/homepage}">CUSTOMER LOGIN</a></li>
-            <li class="list-item">
-              <div class="userImg" onclick="openSignDivForm()">
-                <div class="profileImg">
+            <li class="list-item"><a   th:href="@{/bank_mitra/dashboard}">BANK MITRA LOGIN</a></li>
+             <li class="list-item"><a  th:href="@{/customer/customerDashboard/homepage}">CUSTOMER LOGIN</a></li>
+            <li class="list-item   " >
+              <div class="userImg" >
+                <div class="profileImg"  >
                   <i class="fa-solid fa-circle-user"></i>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-        <!-- <div class="spinnerDiv"><i class="fa-solid fa-bars"></i></div> -->
+        <div class="spinnerDiv" ><i class="fa-solid fa-bars"></i></div>
       </div>
      
-      <div class="profileSignDiv">
+      <div class="profileSignDiv" >
          <div class="profileImgSignInDiv">
             <img src="" alt="" />
          </div>
          <div class="details d-flex justify-content-center flex-column  w-100 align-items-center">
                  <h4>Customer name</h4>
-                 <button type="submit" class="btn btn-light" >Update Profile</button>
+                 <button type="submit" onclick="window.location.href='/customer/customerDashboard/updateProfile'"  class="btn btn-light" >Update Profile</button>
           </div>
          <hr>
-         <button type="submit" class="btn btn-light" >SignIn</button>
-         <button type="submit" class="btn btn-light" >Logout</button>
+         <button type="submit" onclick="window.location.href='/customer/customerDashboard/homepage'"   class="btn btn-light" >SignIn</button>
+         <button type="submit" onclick="window.location.href='/logout'"  class="btn btn-light" >Logout</button>
       </div>
-	   
+    
 	<div th:replace="${content}"></div>
 	
 	

@@ -11,14 +11,19 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.starLife.in.Entity.Customer;
 import com.starLife.in.ExceptionHandler.CustomerException;
 import com.starLife.in.repository.CustomerRepository;
 import com.starLife.in.service.AccountOpenService;
+import com.starLife.in.starLifeConfig.CustomerConfiguration.JwtProvider;
 
 
 
@@ -28,12 +33,13 @@ public class AccountOpenServiceImpl implements AccountOpenService {
 	@Autowired
 	private BCryptPasswordEncoder bcptp;
 
-	
+	@Autowired private JwtProvider jwtProvider;
+
 	@Autowired
 	private CustomerRepository customerRepo;
 
   @Override
-  public Customer openAccount(Customer customer, MultipartFile image) throws CustomerException {
+  public Customer openAccount(Customer customer, MultipartFile image, Model m) throws CustomerException {
     
     
     try{
@@ -103,6 +109,15 @@ public class AccountOpenServiceImpl implements AccountOpenService {
 			System.out.println("customer password : ");
 			System.out.println("customer confirm password : ");
 
+			Authentication authentication = new UsernamePasswordAuthenticationToken(userIdd, password);
+      SecurityContextHolder.getContext().setAuthentication(authentication);
+
+			// request for generate jwt token 
+      String jwt = jwtProvider.generateToken(authentication);
+
+			m.addAttribute("token", jwt);
+      
+      
 			// save details into database.......
 			
 			Customer ctmr = this.customerRepo.save(customer);

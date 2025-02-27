@@ -5,9 +5,12 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>[[${title}]]</title>
+
 </head>
 <body>
 	<section>
+	
+
 		<div class="container-fluid newAcMnCtnr">
 			<div class="row openAccRow">
 			  <div class="row openAccRowInner">
@@ -15,8 +18,8 @@
 					<h1>Open Your</h1>
 					<h1>New Account</h1>
 				</div>
-				<div  th:if="${session.alert}" class="alert accountAlert" th:classappend="${session.alert.type}"  role="alert">          
-					<p>[[${session.alert.message}]]</p>
+				<div  th:if="${session.alertt}" class="alert accountAlert" th:classappend="${session.alertt.type}"  role="alert">          
+					<p>[[${session.alertt.message}]]</p>
 				</div>
 
 				<div class="col-lg-8">
