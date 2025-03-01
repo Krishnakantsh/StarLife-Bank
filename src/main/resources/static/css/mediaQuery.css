@@ -279,8 +279,9 @@
     font-size: 5vw;
     padding:1vw  4vw;
   }
-  .spinnerDiv{
-    display: block;
+  .listOpener{
+    display: flex;
+    padding: 5px;
   }
 
    .TaglineDIV{
@@ -306,13 +307,84 @@
     display: none;
   }
   .navList{
-     display: none;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+     align-items: start;
+     position: fixed;
+     top: 55px;
+     right: -100%;
+     width: 80vw;
+     background-color: rgba(255, 255, 255, 0.215);
+     backdrop-filter: blur(10px);
+     min-height: 100vh;
+     padding: 15px;
+     border-top-left-radius: 15px;
+     border-bottom-left-radius: 15px;
+     border-left: 2px solid rgb(255,255,255);
+     transition: all 1s;
   }
+
+
+  .navList ul{
+    flex-direction: column;
+    height: fit-content;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: start;
+    margin-top: 25px;
+  }
+  .navList ul li{
+    font-size: 6vw;
+  }
+  .navList ul li a{
+    color: rgb(255,255,255);
+   font-weight: 500;
+
+  }
+  
+  .userImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width: 30px;
+    margin-left: 25px;
+    margin-top: 5vw;
+  }
+  .profileImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width: 100%;
+  }
+  
+  .profileImg i{
+    font-size:15vw;
+    color: rgb(255,255,255);
+    text-shadow: 0 0 10px rgb(0,0,0);
+  }
+
+   .logoutListItem {
+      display: block;
+      margin-left: 15px;
+      background-color:transparent;
+      border: 2px solid rgb(255,255,255);
+      margin-top: 20px;
+      font-size: 8vw;
+      font-weight: 700;
+      color: rgb(255,255,255);
+      box-shadow: 0 0 10px rgb(0,0,0);
+      text-shadow: 0 0 10px rgb(0,0,0);
+      padding: 0 50px;
+   }
 
   .screenSlider{
     height:45vh;
     border-radius:none;
     box-shadow: none;
+    margin-top: 10vw;
   }
   
   .screenSlider img{
@@ -923,6 +995,60 @@ padding: 5vw 0;
 
 
 
+
+
+/*    forgot password setup ......................... */
+
+
+.forgetPasswordOuter{
+	width:100%;
+	height:fit-content;
+	padding:2vw;
+}
+
+.forgetPasswordOuter .alert{
+	height: 10vw;
+}
+
+
+.forgetPasswodDetails , .resetpassDiv{
+	padding:2vw;
+  gap:8vw;
+}
+.resetpassDiv input{
+	margin-top: 2vw;
+}
+.resetpassDiv button{
+	margin-top: 2vw;
+}
+
+.form1{
+	width:100%;
+	height: fit-content;
+}
+.forgetPasswodDetails h1, .resetpassDiv h1{
+	font-size:7vw;
+}
+
+.forgetPasswodDetails input{
+	height:10vw;
+}
+
+.verifyotpdiv{
+	gap:2vw;
+  flex-direction: column;
+}
+
+
+.verifyotpdiv button{
+	width:100%;
+	height:10vw;
+}
+
+.lgImgDivRight{
+  justify-content: start;
+  padding-top: 15vw
+}
 
 
 

@@ -14,17 +14,17 @@ body{
 
 .header{
 	width: 100%;
-	height:4vw;
-	background:rgb(23,141,241);
+	background:rgba(130, 197, 253, 0.9);
 	z-index: 500;
 	position: fixed;
-	top:2vw;
+	top:0;
 	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding:1.5vw;
 	box-shadow:1px 5px 10px black;
+	padding: 0 15px;
+	height: auto;
 }
 
 
@@ -35,37 +35,64 @@ body{
 	border:2px solid white;
 	padding:0.5vw 0.8vw;
 	border-radius:30px;
-	box-shadow:inset 4px 4px 10px white;
+	box-shadow:inset 4px 4px 10px white , 0 0 10px rgb(0,0,0);
 	font-weight:500;
-}
-
-.logoDiv:hover{
-	scale:0.96;
+	transition:all 0.5s;
+	text-shadow: 0 0 10px rgb(0,0,0);
 }
 
 .header a{
 	text-decoration:none;
 }
+.navList {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: fit-content;
+	height: fit-content;
+}
 
-.header ul{
+.navList .fa-xmark{
+	display: none;
+}
+
+.navList ul {
+	width:100%;
+	cursor: pointer;
+	list-style:none;
 	display:flex;
 	align-items:center;
-	justify-content:space-between;
-	gap:1.5vw;
-	
+	justify-content:center;
+}
+.navList li{
+	height: 4vw;
+	display: inline-block;
 }
 
-.header ul li{
-	list-style:none;
-	font-size:1vw;
-	cursor: pointer;
-	font-weight: 500;
-	color:rgb(255,255,255);
+.navList li a{
+  height: 100%;
+	padding: 0 20px;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: rgb(0,0,0);
+	text-shadow: 0 0 10px rgb(0,0,0);
 }
 
-.header ul li a{
+.navList li a:hover{
+	text-shadow: 0 0 20px rgb(160, 120, 252);
+}
 
-	color:rgb(255,255,255);
+.userImg{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:100%;
+	width: 30px;
+}
+
+.logoutListItem{
+	display: none;
 }
 
 .highlighted{
@@ -73,60 +100,9 @@ body{
 }
 
 
-.colorPalateHeader{
-	position:fixed;
-	top:0;
-	left:0;
-	z-index:500;
-	height:2vw;
-	width:100%;
-	background:#d5eadc;
-	display:flex;
-	flex-direction:row;
-	align-items:center;
-	justify-content:start;
-}
-
-
-.navColorDiv{
-	height:1.2vw;
-	width:1.2vw;
-	border-radius:50%;
-	box-shadow:0.1vw 0.1vw 0.3vw black;
-}
-
-.navColorDivContainer{
-	display:flex;
-	flex-direction:row;
-	align-items:center;
-	justify-content:start;
-	height:2vw;
-	width:20vw;
-	gap:15px;
-	padding-left:25px;
-}
-
-
-#navColorDiv1{
-	background:#77CDFF;
-}
-
-#navColorDiv2{
-   background:#FFE3E3;
-}
-#navColorDiv3{
-   background:#C9E9D2;
-}
-#navColorDiv4{
-   background:#A66E38;
-}
-#navColorDiv5{
-   background:#798645;
-}
-
 .profileSignDiv{
 	position:fixed;
-	top:7vw;
+	top:5vw;
 	right:2vw;
 	width:15vw;
 	height:fit-content;
@@ -197,7 +173,7 @@ body{
 	border:1px solid green;
 }
 
-.spinnerDiv{
+.listOpener{
 	display:none;
 	color: rgb(255,255,255);
 	font-size: 6vw;

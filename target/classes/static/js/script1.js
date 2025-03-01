@@ -1,4 +1,11 @@
 /*password hide show js start here */
+var headerr = document.querySelector(".header");
+var logodiv = document.querySelector(".logoDiv");
+var navList = document.querySelector(".navList");
+// let ChecBalStaDiv = document.querySelector(".ChecBalStaDiv");
+// let checBalCard1 = document.querySelector("#checBalCard1");
+// let checBalCard2 = document.querySelector("#checBalCard2");
+// let checBalCard3 = document.querySelector("#checBalCard3");
 
 var flag = 0;
 
@@ -46,7 +53,7 @@ var formStatus = 1;
 const openSignDivForm = () => {
   let userImg = document.querySelector(".userImg");
   let signInDiv = document.querySelector(".profileSignDiv");
-  console.log("click btn ");
+
 
   if (formStatus == 1) {
     signInDiv.style.display = "flex";
@@ -67,37 +74,22 @@ window.addEventListener("load", function () {
   formStatus = 1;
 });
 
-let ChecBalStaDiv = document.querySelector(".ChecBalStaDiv");
-let checBalCard1 = document.querySelector("#checBalCard1");
-let checBalCard2 = document.querySelector("#checBalCard2");
-let checBalCard3 = document.querySelector("#checBalCard3");
 
-ChecBalStaDiv.addEventListener("mouseover", function () {
-  checBalCard1.style.transform = "scaleX(20px)";
-  checBalCard2.style.transform = "translateX(-60px) rotateY(30deg)";
-  checBalCard3.style.transform = "translateX(60px) rotateY(-30deg)";
-});
-ChecBalStaDiv.addEventListener("mouseleave", function () {
-  checBalCard1.style.transform = "none";
-  checBalCard2.style.transform = "";
-  checBalCard3.style.transform = "";
-});
 
-var headerr = document.querySelector(".header");
-var logodiv = document.querySelector(".logoDiv");
-var navList = document.querySelector(".navList");
 
-function kris() {
-  console.log("hi clicked ");
 
-  gsap.from(".header", {
-    scale: 0,
-    y: -30,
-    duration: 0.5,
-    delay: 0.5,
-  });
-}
-kris();
+
+// function kris() {
+//   console.log("hi clicked ");
+
+//   gsap.from(".header", {
+//     scale: 0,
+//     y: -30,
+//     duration: 0.5,
+//     delay: 0.5,
+//   });
+// }
+// kris();
 
 // ..................................................................................
 
@@ -141,11 +133,22 @@ function showChatBot() {
 }
 
 
-let spinnerDiv = document.querySelector(".spinnerDiv");
+var listOpenerflag = true
 
-spinnerDiv.addEventListener("click" , function(){
-	console.log("side bar open ")
-})
+function navListOpener(){
+  if(listOpenerflag){
+    navList.style.right='0%';
+    listOpenerflag = false;
+  }
+  else{
+    navList.style.right='-100%';
+    listOpenerflag = true;
+  }
+
+}
+var listOpener = document.querySelector(".listOpener");
+
+listOpener.addEventListener( 'click', navListOpener  )
 
 
 

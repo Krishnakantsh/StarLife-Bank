@@ -49,62 +49,8 @@ public class MainController {
 		session.removeAttribute("alert");
 		return "Open_new_account";
 	}
+	 
 
-	// Home forget password page handler ................................
-
-	 @GetMapping("/forgetPasswordPage")
-	 public String openForgetPasswordPage(Model m) {
-		 m.addAttribute("title","Forgotten password");
-		 return "forgetPassword";
-	 }
-	 
-	//  reset password page handler ....................................
-
-	 @GetMapping("/resetPassword")
-	 public String passwordResetPageOpen(Model m) {
-		 m.addAttribute("title","Reset password !!");
-		 return "NewPasswordSetUp";
-	 }
-	 
-	 
-	 // signin system .......SigninHelper...........................
-	
-	//  @PostMapping("/kris")
-	//   public ResponseEntity<AuthResponse> loginUserHandler(@RequestBody SigninHelper signinHelper ) throws Exception{
-		  
-	// 	  String username =signinHelper.getEmail();
-	// 	  String passw = signinHelper.getCpassword();
-		  
-	// 	  Authentication authent =authenticate(username , passw);
-	// 	  SecurityContextHolder.getContext().setAuthentication(authent);
-          
-  //         String token =jwtprovider.generateToken(authent);
-          
-  //         System.out.println(token);
-          
-          
-  //         AuthResponse resp = new AuthResponse(token, "sign in successfully");
-          
-	// 	  return new ResponseEntity<AuthResponse>(resp , HttpStatus.CREATED);
-		  
-	//   }
-
-	// private Authentication authenticate(String username, String passw) {
-		
-	// 	UserDetails userDetails = customCustomerDetails.loadUserByUsername(username);
-		
-	// 	if(userDetails == null) {
-	// 		throw new BadCredentialsException("invalid user");
-	// 	}
-		
-	// 	if(!bcptp.matches(passw,userDetails.getPassword())) {
-	// 		throw new BadCredentialsException("invalid password");
-	// 	}
-				
-	// 	return new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
-	// }
-	 
-	 
 // handler for get customer page support ..........
 
 @GetMapping("/Customer_Support")

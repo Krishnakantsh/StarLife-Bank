@@ -1,9 +1,9 @@
 
 @media(max-width:400px){
 
-  .maincontainerr, .newAcMnCtnr, .moneyTransMain, .updatepinmain, .debitcardMain, .viewstatementmain{
+.maincontainerr, .newAcMnCtnr, .moneyTransMain, .updatepinmain, .debitcardMain, .viewstatementmain{
    padding-top: 10vw;
-  } 
+} 
 
 .header{
   height: 15vw;
@@ -12,6 +12,10 @@
   font-size: 5vw;
   padding:1vw  4vw;
 }
+
+
+
+
 .spinnerDiv{
   display: block;
 }
