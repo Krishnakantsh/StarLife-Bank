@@ -1,6 +1,7 @@
 .bankmitraupadate{
   width: 100%;
-  max-height:calc(100vh - 7vw);
+  /* max-height:calc(100vh - 7vw); */
+  height: fit-content;
   border: 2px solid rgb(23,141,241);
   display: flex;
   flex-direction: column;
@@ -42,7 +43,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 1vw;
 }
 
 .inputDiv label{
@@ -50,7 +50,7 @@
   text-align: left;
   color: rgb(23,141,241);
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .inputDiv button{
   width: 100%;
@@ -59,11 +59,9 @@
   margin-top: 1vw;
 }
 
-
-
-
 .inputDiv  input{
   width:100%;
+  height: 2.5vw;
 }
 
 

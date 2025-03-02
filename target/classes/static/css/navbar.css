@@ -41,9 +41,6 @@ body{
 	text-shadow: 0 0 10px rgb(0,0,0);
 }
 
-.header a{
-	text-decoration:none;
-}
 .navList {
 	display: flex;
 	align-items: center;
@@ -117,6 +114,15 @@ body{
 	box-shadow: 1px 1px 15px rgba(0,0,0,0.3), -1px -1px 15px rgba(0,0,0,0.3) ;
 }
 
+.profileSignDiv i{
+	text-align: left;
+	color: rgb(247, 14, 45);
+	text-shadow: 0 0 10px rgb(0,255,0);
+	font-size: 2vw;
+	width: 100%;
+	padding-left: 1vw;
+}
+
 .profileImgSignInDiv{
 	height:5vw;
 	width:5vw;
@@ -179,6 +185,8 @@ body{
 	font-size: 6vw;
 	margin-right: 3vw;
 }
+
+
 
 .adminPageMainDiv{	
 	display:flex;

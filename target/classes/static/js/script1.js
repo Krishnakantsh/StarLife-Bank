@@ -2,10 +2,7 @@
 var headerr = document.querySelector(".header");
 var logodiv = document.querySelector(".logoDiv");
 var navList = document.querySelector(".navList");
-// let ChecBalStaDiv = document.querySelector(".ChecBalStaDiv");
-// let checBalCard1 = document.querySelector("#checBalCard1");
-// let checBalCard2 = document.querySelector("#checBalCard2");
-// let checBalCard3 = document.querySelector("#checBalCard3");
+
 
 var flag = 0;
 
@@ -46,6 +43,9 @@ var refresh = document.querySelector(".refreshDiv");
 
 // capture code process goes here .....End.......
 
+
+
+
 /* floating login and profile div script ... */
 
 var formStatus = 1;
@@ -53,7 +53,6 @@ var formStatus = 1;
 const openSignDivForm = () => {
   let userImg = document.querySelector(".userImg");
   let signInDiv = document.querySelector(".profileSignDiv");
-
 
   if (formStatus == 1) {
     signInDiv.style.display = "flex";
@@ -64,9 +63,18 @@ const openSignDivForm = () => {
   }
 };
 
-let profileImg = document.querySelector(".profileImg");
 
+var profileImg = document.querySelector(".profileImg");
 profileImg.addEventListener("click", openSignDivForm);
+
+var profileHide = document.querySelector(".profileSignDiv i");
+
+profileHide.addEventListener("click" , function(){
+  let signInDiv = document.querySelector(".profileSignDiv");
+  signInDiv.style.display = "none";
+})
+
+
 
 window.addEventListener("load", function () {
   let signInDiv = document.querySelector(".profileSignDiv");
@@ -76,20 +84,6 @@ window.addEventListener("load", function () {
 
 
 
-
-
-
-// function kris() {
-//   console.log("hi clicked ");
-
-//   gsap.from(".header", {
-//     scale: 0,
-//     y: -30,
-//     duration: 0.5,
-//     delay: 0.5,
-//   });
-// }
-// kris();
 
 // ..................................................................................
 
@@ -133,21 +127,30 @@ function showChatBot() {
 }
 
 
-var listOpenerflag = true
 
+//    navlist opener concept ...................................
+
+
+let listOpenerIcon = document.querySelector(".listOpener i")
+var listOpenerflag = true
 function navListOpener(){
   if(listOpenerflag){
     navList.style.right='0%';
+    listOpenerIcon.classList.remove("fa-bars");
+    listOpenerIcon.classList.add("fa-xmark");
+    listOpenerIcon.style.color="red"
     listOpenerflag = false;
   }
   else{
     navList.style.right='-100%';
+    listOpenerIcon.classList.remove("fa-xmark");
+    listOpenerIcon.classList.add("fa-bars");
+    listOpenerIcon.style.color="rgb(255,255,255)"
     listOpenerflag = true;
   }
 
 }
 var listOpener = document.querySelector(".listOpener");
-
 listOpener.addEventListener( 'click', navListOpener  )
 
 
