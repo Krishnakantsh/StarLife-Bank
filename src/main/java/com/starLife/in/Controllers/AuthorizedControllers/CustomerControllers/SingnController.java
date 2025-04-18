@@ -23,7 +23,7 @@ public class SingnController {
    @GetMapping("/signin")
    public String openSignInpage(Model m) {
 
-	    Random rm = new Random();
+	   Random rm = new Random();
        int numMax = 67;
        int numMin = 0;
 
@@ -42,7 +42,7 @@ public class SingnController {
        CaptureCode cc= new CaptureCode();
        
        cc.setCaptureNo(1);
-   	 cc.setCaptureCode(capture1);
+   	   cc.setCaptureCode(capture1);
    	   
        captureRepository.save(cc);
    	
@@ -51,7 +51,6 @@ public class SingnController {
        m.addAttribute("capture",capture);
        
 	   m.addAttribute("title","Login page");
-	   
 	   
 	   return "login";
    }

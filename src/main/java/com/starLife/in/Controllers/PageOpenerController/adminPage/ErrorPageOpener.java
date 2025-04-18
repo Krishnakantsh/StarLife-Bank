@@ -1,4 +1,4 @@
-package com.starLife.in.Controllers.PageOpenerController.BankAuthorityPages;
+package com.starLife.in.Controllers.PageOpenerController.adminPage;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

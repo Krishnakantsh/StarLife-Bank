@@ -12,6 +12,8 @@ import com.starLife.in.helper.Message;
 import com.starLife.in.helper.SigninHelper;
 import com.starLife.in.repository.CustomerRepository;
 import com.starLife.in.service.EmailService;
+
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -307,28 +309,25 @@ public String checkPanStatus(Principal p, @ModelAttribute Customer cust, Model m
 
   // npci adhar css............................................................
 
-  @GetMapping("/npciprocess")
+  @GetMapping("/npciopener")
   public String npci(Model m, Principal p, HttpSession session){
 
   String username = p.getName();
     	 
   Customer customer = this.cstmrRepo.getUserByUserName(username); 
 
-  
-  if(customer.getNpcistatus() == null){
-    session.setAttribute("npciNotDone", "npciNotDone");
-  }else{
-    session.setAttribute("npciDone", "npciDone");
-  }
- 	 
+    session.setAttribute("statuschecker", "statuschecker");
+
+    m.addAttribute("title", "NPCI - Process");
     m.addAttribute("customer", customer);
+
     	 return "customerService/npciLink";
  }
 
 // npci process handler 
 
 @PostMapping("/npci_process")
-public String npciProcess(Principal p, @ModelAttribute Customer cust, Model m , HttpSession session){
+public String npciProcess(HttpServletRequest req,Principal p, @ModelAttribute Customer cust, Model m , HttpSession session){
 
   
   String username = p.getName();
@@ -337,12 +336,17 @@ public String npciProcess(Principal p, @ModelAttribute Customer cust, Model m , 
   String account =cust.getAccountNo();
   String Userid =cust.getUserId();
 
+
   if(customer.getUserId().equals(Userid)  &&  customer.getAccountNo().equals(account)){
       customer.setNpcistatus("done");
-      this.cstmrRepo.save(customer);      
-    session.setAttribute("npciDone", "npciDone");
-    session.setAttribute("npciAlert", "npciAlert");
+      this.cstmrRepo.save(customer); 
+      session.removeAttribute("npciNotDone");
+      session.removeAttribute("npciStatus");
+      session.setAttribute("statuschecker", "statuschecker");
+      session.setAttribute("npcidoneAlert", "npcidoneAlert");
   }
+
+  m.addAttribute("title", "NPCI - Process");
 
   return "customerService/npciLink";
 }
@@ -350,21 +354,34 @@ public String npciProcess(Principal p, @ModelAttribute Customer cust, Model m , 
 // npci status show handler ................................
 
 @PostMapping("/checkNpciStatus")
-public String chechNpciStatus(Principal p, @ModelAttribute Customer cust, Model m , HttpSession session){
+public String chechNpciStatus(HttpServletRequest req,Principal p, @ModelAttribute Customer cust, Model m , HttpSession session){
 
   String username = p.getName();
     	 
   Customer customer = this.cstmrRepo.getUserByUserName(username); 
+  System.out.println("customer");
+  System.out.println(customer);
   
-  String account =cust.getAccountNo();
+  String account = cust.getAccountNo();
 
-  if( customer.getAccountNo().equals(account) &&   customer.getNpcistatus() != null){
+  System.out.println(" enter account : "+account);
+
+
+  session.invalidate();
+  session = req.getSession(true); // Re-create session after invalidation
+
+  if (customer != null && customer.getAccountNo().equals(account) && "done".equals(customer.getNpcistatus())) {
+    System.out.println("done");
+        
         session.setAttribute("npciStatus", "npciStatus");
-        session.removeAttribute("npciDone");
   }else{
+    System.out.println("not done");
     session.setAttribute("npciNotDone", "npciNotDone");
-
+    session.setAttribute("npciNotAlert", "npciNotAlert");
   }
+  
+  m.addAttribute("title", "NPCI - Process");
+  m.addAttribute("customer", customer);
 
   return "customerService/npciLink";
 	}

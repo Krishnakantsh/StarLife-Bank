@@ -15,8 +15,8 @@
 
          <h1 style="font-size: 2.5vw;">NPCI : PROCEED FOR CONNECT ACCOUNT WITH NPCI</h1>
          <div class="linkadharmain">
-            <div class="alert alert-primary" role="alert" th:if="${session.notNpciAlert}">
-               NPCI has been done successfully !!!
+            <div class="alert alert-warning" role="alert" th:if="${session.npciNotAlert}">
+                You need to activate NPCI.
             </div>
             <form action="#" th:action="@{/customer/customerDashboard/npci_process}" method="post">
                <input type="text" placeholder="Enter your account no : 1545451070XXXXXX" class="form-control" name="accountNo" required>
@@ -27,13 +27,13 @@
       </div>
 
 
-      <div class="container-fluid border border-primary  maincontainerr" th:if="${session.npciDone}">
+      <div class="container-fluid border border-primary  maincontainerr" th:if="${session.statuschecker}">
          <h1>ENTER YOUR ACCOUNT NUMBER</h1>
          <div class="linkadharmain  " style="margin-top: 4vw;">
-            <div class="alert alert-primary" role="alert" th:if="${session.npciAlert}">
-               Pan card has been linked successfully !!!
+            <div class="alert alert-primary" role="alert" th:if="${session.npcidoneAlert}">
+               NPCI activated successfully |||
             </div>
-            <form action="#" th:action="@{/CustomerDashborad/checkNpciStatus}" method="post">
+            <form action="#" th:action="@{/customer/customerDashboard/checkNpciStatus}" method="post">
                <input type="text" placeholder="Enter your account no : 1545451070XXXXXX" class="form-control" name="accountNo" required>
                <button class="btn btn-primary btn-block" type="submit">CHECK STATUS</button>
             </form>

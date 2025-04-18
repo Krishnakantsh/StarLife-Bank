@@ -104,6 +104,7 @@ public class BankMitra{
   }
   
   
+  
   public BankMitra() {
   }
 
@@ -132,6 +133,12 @@ public class BankMitra{
         + panno + ", addharno=" + addharno + ", accountno=" + accountno + ", fathername=" + fathername + ", mothername="
         + mothername + ", bimage=" + bimage + ", password=" + password + ", createdAt=" + createdAt + ", role=" + role
         + "]";
+  }
+  public int getId() {
+    return id;
+  }
+  public void setId(int id) {
+    this.id = id;
   }
 
 

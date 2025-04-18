@@ -1,4 +1,4 @@
-package com.starLife.in.starLifeConfig.CustomerConfiguration;
+package com.starLife.in.starLifeConfig;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -22,7 +22,10 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import com.starLife.in.starLifeConfig.AdminLoginConfiguration.CustomAdminDetailsService;
 import com.starLife.in.starLifeConfig.BankMitraConfiguration.CustomBankMitraDetailsService;
+import com.starLife.in.starLifeConfig.CustomerConfiguration.CustomCustomerDetails;
+import com.starLife.in.starLifeConfig.CustomerConfiguration.JwtValidator;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -39,6 +42,9 @@ public class StarLifeBankConfig {
 
 	@Autowired
 	private CustomBankMitraDetailsService customBankMitraDetailsService;
+
+	@Autowired
+	private CustomAdminDetailsService customAdminDetailsService;
 
 
 	@Autowired
@@ -73,6 +79,7 @@ public class StarLifeBankConfig {
 				.authorizeHttpRequests(request -> request
 				.requestMatchers("/customer/**").hasRole("CUSTOMER")
 				.requestMatchers("/bank_mitra/**").hasRole("BANKMITRA")
+				.requestMatchers("/admin/**").hasRole("ADMIN")
 				.anyRequest().permitAll()
 				)
 				
@@ -93,6 +100,8 @@ public class StarLifeBankConfig {
 								response.sendRedirect("/signin"); // Redirect to customer login
 						} else if (requestURI.startsWith("/bank_mitra/")) {
 								response.sendRedirect("/bankmitraLogin"); // Redirect to bank mitra login
+						} else if (requestURI.startsWith("/admin/")) {
+								response.sendRedirect("/adminLogin"); // Redirect to bank mitra login
 						} else {
 								response.sendRedirect("/signin"); // Default login page
 						}
@@ -116,12 +125,6 @@ public class StarLifeBankConfig {
 
 
 
-
-
-
-
-
-
 	 	http.logout(logout -> logout
 
 				.logoutUrl("/logout") // Custom logout URL
@@ -140,15 +143,20 @@ public class StarLifeBankConfig {
 
 	  @Bean
     public AuthenticationManager authenticationManager() {
+
         DaoAuthenticationProvider customerProvider = new DaoAuthenticationProvider();
         customerProvider.setUserDetailsService(getCustomerDetailService);
         customerProvider.setPasswordEncoder(passwordEncoder());
+
+        DaoAuthenticationProvider adminProvider = new DaoAuthenticationProvider();
+        adminProvider.setUserDetailsService(customAdminDetailsService);
+        adminProvider.setPasswordEncoder(passwordEncoder());
 
         DaoAuthenticationProvider bankMitraProvider = new DaoAuthenticationProvider();
         bankMitraProvider.setUserDetailsService(customBankMitraDetailsService);
         bankMitraProvider.setPasswordEncoder(passwordEncoder());
 
-        return new ProviderManager(List.of(customerProvider, bankMitraProvider));
+        return new ProviderManager(List.of(customerProvider, bankMitraProvider, adminProvider));
     }
 
 

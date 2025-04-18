@@ -1,4 +1,4 @@
-package com.starLife.in.starLifeConfig.CustomerConfiguration;
+package com.starLife.in.starLifeConfig;
 
 import java.io.IOException;
 import java.util.Set;
@@ -21,10 +21,12 @@ public class CustomAuthenticationSuccessHandler  implements AuthenticationSucces
     
         Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
 
-        if (roles.contains("ROLE_CUSTOMER")) {
+      if (roles.contains("ROLE_CUSTOMER")) {
           response.sendRedirect("/customer/customerDashboard/homepage"); // Redirect Customers
       } else if (roles.contains("ROLE_BANKMITRA")) {
           response.sendRedirect("/bank_mitra/dashboard"); // Redirect Bank Mitras
+      } else if (roles.contains("ROLE_ADMIN")) {
+          response.sendRedirect("/admin/dashboard"); // Redirect Bank Mitras
       } else {
         System.out.println("Customer not found  "+roles);
           response.sendRedirect("/home"); // Default Page

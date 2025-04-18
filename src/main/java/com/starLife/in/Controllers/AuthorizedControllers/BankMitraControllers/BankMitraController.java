@@ -17,7 +17,6 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/bank_mitra")
 public class BankMitraController {
 
-
   @Autowired  private BankMitraRepository bankmitraRepo;
 
   @GetMapping("/dashboard")

@@ -160,7 +160,6 @@ public class OtherPageOpener {
 
   //  do byc through bank mitra ......................................................
 
-
   @PostMapping("/doKyc/otp")
   public String doKyc(@ModelAttribute AdharNumberProceesorHelper  adharHelp , Model m , Principal p , HttpSession session) throws OtpException {
       
@@ -217,7 +216,6 @@ public class OtherPageOpener {
 
   }
   
- 
   //  customer kyc handler ..........................................
 
   @PostMapping("/doKyc/process")
@@ -295,8 +293,6 @@ public class OtherPageOpener {
 
   }
   
- 
-
 // handler for pan card link process...................................
 
 @GetMapping("/open_pan_card_link")
@@ -317,7 +313,7 @@ public String getpancard_link_page(Model m , Principal p, HttpSession session) {
 // pan card otp handler ...................................
 
 
- @PostMapping("/pan_card_link_otp")
+@PostMapping("/pan_card_link_otp")
 public String getMethodName(Model m , Principal p, HttpSession session, @ModelAttribute Customer customer) throws OtpException {
 
    String email = p.getName();
@@ -370,8 +366,7 @@ public String getMethodName(Model m , Principal p, HttpSession session, @ModelAt
 }
 
 
-
- @PostMapping("/pan_card_link_proceed")
+@PostMapping("/pan_card_link_proceed")
 public String linkPan(Model m , Principal p, HttpSession session, @ModelAttribute OtpHelper otpHelper) {
     
 
@@ -444,9 +439,6 @@ public String getapply_aadhar_card_link_page(Model m , Principal p, HttpSession 
 
 
 // apply 
-
-
-
 @GetMapping("/open_npci_enable_link")
 public String get_npci_link_page(Model m , Principal p, HttpSession session) {
 
@@ -569,14 +561,6 @@ public String proceedNpci(Model m , Principal p, HttpSession session, @ModelAttr
   return "/BankMitraServices/customer_services";
 
 }
-
-
-
-
-
-
-
-
 
 
 }
